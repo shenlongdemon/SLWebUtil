@@ -30,3 +30,11 @@
 
 # Debug files
 *.dSYM/
+.vs
+obj
+bin
+obj
+bin
+packages
+obj
+bin
