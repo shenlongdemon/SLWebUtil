@@ -10,7 +10,7 @@ namespace SLWebUtil.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Long's site";
 
             return View();
         }

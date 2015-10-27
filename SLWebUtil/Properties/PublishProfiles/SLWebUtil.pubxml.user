@@ -172,7 +172,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2015 10:32:27</publishTime>
     </File>
     <File Include="bin/SLWebUtil.dll">
-      <publishTime>10/27/2015 11:24:15</publishTime>
+      <publishTime>10/27/2015 14:55:27</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>10/27/2015 10:32:04</publishTime>
@@ -223,7 +223,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2015 10:31:44</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>10/27/2015 10:31:39</publishTime>
+      <publishTime>10/27/2015 14:52:36</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>10/27/2015 10:31:39</publishTime>
@@ -286,13 +286,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2015 10:32:12</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>10/27/2015 11:04:35</publishTime>
+      <publishTime>10/27/2015 14:50:00</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>10/27/2015 10:31:39</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/27/2015 11:04:14</publishTime>
+      <publishTime>10/27/2015 14:54:56</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/27/2015 10:31:39</publishTime>
@@ -301,7 +301,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2015 10:31:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/27/2015 11:24:15</publishTime>
+      <publishTime>10/27/2015 14:55:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

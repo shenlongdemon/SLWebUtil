@@ -15,3 +15,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.divmain
+ {
+    border-radius: 125px;
+    border: 2px solid #8AC007;
+    padding: 0px;
+}
