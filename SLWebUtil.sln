@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLWebUtil", "SLWebUtil\SLWebUtil.csproj", "{02D50F99-EFCC-48A0-9E83-17383FFC568C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{33447BAE-F704-47F1-9E52-F1BC2FB0BDB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerServices", "ManagerService\ManagerServices.csproj", "{5ECF0198-323D-4164-8E3D-E2797215A272}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrionServices", "OrionService\OrionServices.csproj", "{852A477D-B351-4BD2-B831-0656A8A5D579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUtility", "..\CSharpDLL\WebApiUtility\WebApiUtility\WebApiUtility.csproj", "{4D3204D9-5F2B-472D-910E-14C3A936F86B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLWebUtil", "SLWebUtil\SLWebUtil.csproj", "{02D50F99-EFCC-48A0-9E83-17383FFC568C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\CSharpDLL\Utilities\Utilities.csproj", "{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\..\CSharpDLL\Utilities\Utilities.csproj", "{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUtility", "..\..\CSharpDLL\WebApiUtility\WebApiUtility\WebApiUtility.csproj", "{4D3204D9-5F2B-472D-910E-14C3A936F86B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5ECF0198-323D-4164-8E3D-E2797215A272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5ECF0198-323D-4164-8E3D-E2797215A272}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECF0198-323D-4164-8E3D-E2797215A272}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,14 +29,18 @@ Global
 		{852A477D-B351-4BD2-B831-0656A8A5D579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{852A477D-B351-4BD2-B831-0656A8A5D579}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{852A477D-B351-4BD2-B831-0656A8A5D579}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D50F99-EFCC-48A0-9E83-17383FFC568C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

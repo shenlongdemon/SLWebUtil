@@ -45,11 +45,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CSharpDLL\Utilities\Utilities.csproj">
+    <ProjectReference Include="..\..\..\CSharpDLL\Utilities\Utilities.csproj">
       <Project>{044b9b2b-fc2a-4312-bbee-c938cb6e5332}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CSharpDLL\WebApiUtility\WebApiUtility\WebApiUtility.csproj">
+    <ProjectReference Include="..\..\..\CSharpDLL\WebApiUtility\WebApiUtility\WebApiUtility.csproj">
       <Project>{4d3204d9-5f2b-472d-910e-14c3a936f86b}</Project>
       <Name>WebApiUtility</Name>
     </ProjectReference>

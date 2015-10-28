@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CSharpDLL\Utilities\Utilities.csproj">
+      <Project>{044b9b2b-fc2a-4312-bbee-c938cb6e5332}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OrionService\OrionServices.csproj">
       <Project>{852a477d-b351-4bd2-b831-0656a8a5d579}</Project>
       <Name>OrionServices</Name>

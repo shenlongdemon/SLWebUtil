@@ -5,9 +5,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using WebApiUtility;
 using Utilities;
-namespace OrionServices
+using WebApiUtility;
+namespace Services
 {
     public class OrionService
     {

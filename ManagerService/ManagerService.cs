@@ -1,17 +1,18 @@
-﻿using OrionServices;
+﻿using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Utilities;
 namespace ManagerServices
 {
     public class ManagerService
     {
         private static ManagerService _ManagerService;
-        private readonly string ORION_SERVICE = "orion";
-        private readonly OrionService _OrionService = new OrionService();
+        private static readonly string NAMESPACE = "Services";
+        private static readonly string SERVICE = "Service";
+        private static readonly string INVOKE_ACTION = "DoAction";
         public static ManagerService Instance()
         {
             if (_ManagerService == null)
@@ -22,16 +23,10 @@ namespace ManagerServices
         }
         public async Task<object> DoAction(string service, string action, object obj)
         {
-            object res = null;
-            if (service.ToLower().Equals(ORION_SERVICE))
-            {
-                res = await _OrionService.DoAction(action, (string)obj);
-            }
-            else
-            {
-                res = null;
-            }
+            object srv = this.CreateInstance(NAMESPACE + "." + service.ToUpperCase(0) + SERVICE);
+            object res = await srv.InvokeAsync(INVOKE_ACTION, new object[] { action, obj } );            
             return res;
         }
     }
 }
+
