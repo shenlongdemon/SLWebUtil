@@ -21,10 +21,10 @@ namespace ManagerServices
             }
             return _ManagerService;
         }
-        public async Task<object> DoAction(string service, string action, object obj)
+        public async Task<object> DoAction(string service, string action, string obj)
         {
             object srv = this.CreateInstance(NAMESPACE + "." + service.ToUpperCase(0) + SERVICE);
-            object res = await srv.InvokeAsync(INVOKE_ACTION, new object[] { action, obj } );            
+            object res = await srv.InvokeAsync(INVOKE_ACTION, new string[] { action, obj } );            
             return res;
         }
     }
