@@ -17,6 +17,23 @@
         text-align:center;
     }
 </style>
+<script type="text/javascript">
+    function GetPatientsById(patientid) {
+        angular.element(document.documentElement).scope().GetPatientsById(patientid);
+    }
+    $(document).ready(function(){       
+        $("input").keypress(function (e) {
+            var id = this.id;
+            if (id == "txtCode")
+            {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode
+                    GetPatientsById($(this).val());
+                }
+            }
+        });
+    });
+</script>
 <section id="content">
     <div class="container-fluid">
         <div class="row">
@@ -24,14 +41,14 @@
                 <div class="form-group">
                     <label  class="col-md-3 col-sm-3 control-label">Mã số</label>
                     <div class="col-md-9 col-sm-9">
-                        <input  class="form-control" id="txtCode">
+                        <input  class="form-control" id="txtCode" ng-model="vm.currentPatient.Id">
                     </div>
                 </div>     
                 
                 <div class="form-group">
                     <label class="col-md-3 col-sm-3 control-label">Họ tên</label>
                     <div class="col-md-9 col-sm-9">
-                        <input class="form-control" id="txtName" >
+                        <input class="form-control" id="txtName" ng-model="vm.currentPatient.Name" >
                     </div>
                 </div> 
 
@@ -47,7 +64,7 @@
                 <div class="form-group">
                     <label class="col-md-3 col-sm-3 control-label">Đ.Thoại</label>
                     <div class="col-md-9 col-sm-9">
-                        <input class="form-control" id="txtPhone">
+                        <input class="form-control" id="txtPhone" ng-model="vm.currentPatient.Phone">
                     </div>
                 </div> 
                 
@@ -55,7 +72,7 @@
                            
             </div>
             <div class="col-md-1 col-sm-1">
-                <button>Tạo mới</button>
+                <button ng-click="vm.CreatePatient()">Tạo mới</button>
             </div>
             <div class="col-md-6 col-sm-6">
                 <table class="table table-striped table-bordered col-md-12 col-sm-12">
@@ -65,25 +82,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>123</td>
-                            <td>Nguyen Khoa Giang Huong</td>
-                            <td>0905690200</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>Nguyen Khoa Giang Huong</td>
-                            <td>0905690200</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>Nguyen Khoa Giang Huong</td>
-                            <td>0905690200</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>Nguyen Khoa Giang Huong</td>
-                            <td>0905690200</td>
+                        <tr ng-repeat="pa in vm.patients">
+                            <td>{{pa.Id}}</td>
+                            <td>
+                                <button id="btnPatient_{{pa.Id}}" ng-click="vm.GetPatientById(pa.Id)">
+                                    {{pa.Name}}
+                                </button>                                
+                            </td>
+                            <td>{{pa.Phone}}</td>
                         </tr>
                     </tbody>
                 </table>

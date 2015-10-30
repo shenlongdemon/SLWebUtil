@@ -6,14 +6,8 @@
         .config(config)        
         .constant('Constants', 
             {
-                API_BASE: "http://172.31.34.170/righteye.api",
-                API_NOT_AVAILABLE: 'There was a problem connecting to the server.',
-                USERNAME_PASSWORD_REQUIRED: 'Username & Password are required!',
-                USER_CREATED_SUCCESSFULLY: 'User has been created successfully!',
-                USER_UPDATED_SUCCESSFULLY: 'User has been updated successfully!',
-                COMPANY_CREATED_SUCCESSFULLY: 'Company has been created successfully!',
-                COMPANY_UPDATED_SUCCESSFULLY: 'Company has been updated successfully!',
-                PATTERN_EMAIL:'^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$'
+                MEDICINE_API: "http://localhost:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
+                
             }
         )
         .run(run);

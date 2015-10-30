@@ -11,25 +11,14 @@ namespace Services
 {
     public class OrionService
     {
-        private static readonly string ANALYZE_TXT_FILE = "analyze_txt_file";
-        
-        public async Task<object> DoAction(string actionName, string obj)
-        {
-            object res = null;
-            if (actionName.Equals(ANALYZE_TXT_FILE))
-            {
-                res = await AnalyzeTxtFile(obj);
-            }
-            return res;
-        }
-        private async Task<object> AnalyzeTxtFile(string urlOfTxtFile)
+        public OrionService() { }
+        public async Task<object> AnalyzeTxtFile(string urlOfTxtFile)
         {
             object res = null;
             
             HttpResponseMessage response = await WebApiUtil.GetAsync(urlOfTxtFile);
             if (response.IsSuccessStatusCode)
-            {
-                
+            {                
                 string str =  await response.Content.ReadAsStringAsync();
                 res = (object)AnalyzeText(str);
             }

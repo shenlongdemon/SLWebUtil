@@ -8,31 +8,23 @@
     CompanyService.$inject = ['$http','Constants'];
     function CompanyService($http, Constants) {
         var service = {};
+        service.GetPatientById = GetPatientById;
+        service.GetPatientsById = GetPatientsById;
 
-        var API_BASE = Constants.API_BASE;
-        var API_COMPANY = API_BASE + "/companies/";
-        service.GetAll = GetAll;
-        service.Create = Create;
-        service.Update = Update;
-        service.GetById = GetById;
+
 
         return service;
 
-        
-        function GetAll() {
-            
-        }
-        function GetById(id) {
-            
-        }
 
-        function Create(company) {
-           
-        }
-        function Update(company) {
-            
-        }
 
+        function GetPatientById(patientid) {
+            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientById").replace("{obj}", patientid)
+            return $http.get(api);
+        }
+        function GetPatientsById(patientid) {
+            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientsById").replace("{obj}", patientid)
+            return $http.get(api);
+        }
 
     }
 

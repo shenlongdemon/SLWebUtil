@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
-using ManagerServices;
+using Services;
 namespace SLWebUtil.Controllers
 {
     public class ServiceController : ApiController
@@ -19,7 +19,8 @@ namespace SLWebUtil.Controllers
         {
             try
             {
-                object resDynamic = await ManagerService.Instance().DoAction(service, act, obj);
+                //dynamic resDynamic = await ManagerService.Instance().DoAction(service, act, obj);
+                dynamic resDynamic = await ManagerService.Instance().DoAction(service, act, obj);
                 string jsonObject = JsonConvert.SerializeObject(resDynamic);
                 object resObject = JsonConvert.DeserializeObject(jsonObject);
                 return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = resObject };

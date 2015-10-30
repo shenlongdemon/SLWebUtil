@@ -1,30 +1,30 @@
-﻿using Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Utilities;
-namespace ManagerServices
+using System.Linq;
+namespace Services
 {
     public class ManagerService
     {
-        private static ManagerService _ManagerService;
+        private static ManagerService _ManagerService;        
         private static readonly string NAMESPACE = "Services";
         private static readonly string SERVICE = "Service";
-        private static readonly string INVOKE_ACTION = "DoAction";
+        public List<object> Services { get; set; }
         public static ManagerService Instance()
-        {
+        {            
             if (_ManagerService == null)
             {
                 _ManagerService = new ManagerService();
-            }
+                _ManagerService.Services = new List<object>() { new OrionService(), new MedicineService()};
+
+            }            
             return _ManagerService;
         }
-        public async Task<object> DoAction(string service, string action, string obj)
+        public async Task< dynamic> DoAction(string service, string action, string obj)
         {
-            object srv = this.CreateInstance(NAMESPACE + "." + service.ToUpperCase(0) + SERVICE);
-            object res = await srv.InvokeAsync(INVOKE_ACTION, new string[] { action, obj } );            
+            object srv = Services.Where(p=> p.GetType().FullName.Equals(NAMESPACE + "." + service.ToUpperCase(0) + SERVICE)).FirstOrDefault();
+            dynamic res = await srv.InvokeAsync(action, new string[] {  obj } );
+            
             return res;
         }
     }

@@ -2785,7 +2785,9 @@
     <Content Include="Portal\Scripts\jquery-ui-1.11.4.custom\jquery-ui.structure.min.css" />
     <Content Include="Portal\Scripts\jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
     <Content Include="Portal\Scripts\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
-    <Content Include="Portal\app.js" />
+    <Content Include="Portal\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Portal\Medicine\controller\medicine.controller.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3040,7 +3042,9 @@
     <Content Include="Portal\Scripts\angular-1.4.7\docs\js\search-worker.min.js.map" />
     <Content Include="Portal\Scripts\angular-1.4.7\errors.json" />
     <Content Include="Portal\Scripts\angular-1.4.7\version.json" />
-    <Content Include="Portal\index.html" />
+    <Content Include="Portal\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Portal\Scripts\bootstrap-3.3.5\.editorconfig" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\.travis.yml" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\bower.json" />
