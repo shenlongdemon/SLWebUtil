@@ -19,9 +19,11 @@ namespace SLWebUtil.Controllers
         {
             try
             {
-                //dynamic resDynamic = await ManagerService.Instance().DoAction(service, act, obj);
                 dynamic resDynamic = await ManagerService.Instance().DoAction(service, act, obj);
-                string jsonObject = JsonConvert.SerializeObject(resDynamic);
+                string jsonObject = JsonConvert.SerializeObject(resDynamic, Formatting.Indented, new JsonSerializerSettings
+{
+                       PreserveReferencesHandling = PreserveReferencesHandling.Objects
+}); ;
                 object resObject = JsonConvert.DeserializeObject(jsonObject);
                 return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = resObject };
             }

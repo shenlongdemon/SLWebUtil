@@ -13,7 +13,7 @@
         .run(run);
 
     config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
-    
+     
     function config($routeProvider, $locationProvider, $httpProvider) {
 
         $httpProvider.defaults.useXDomain = true;

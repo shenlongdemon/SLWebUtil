@@ -1,6 +1,7 @@
 ﻿
 
 <style>
+    
     input {
         
         text-align:center;
@@ -12,8 +13,6 @@
     }
     td {
         padding-left:10px;
-    }
-    td {
         text-align:center;
     }
 </style>
@@ -32,6 +31,7 @@
                 }
             }
         });
+
     });
 </script>
 <section id="content">
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label class="col-md-3 col-sm-3 control-label">Tuổi</label>
                     <div class="col-md-9 col-sm-9">
-                        <input class="form-control" id="txtAge" >
+                        <input class="form-control" id="txtAge" ng-model="vm.age" >
                     </div>
                 </div> 
 
@@ -72,7 +72,7 @@
                            
             </div>
             <div class="col-md-1 col-sm-1">
-                <button ng-click="vm.CreatePatient()">Tạo mới</button>
+                <button id="btnCreatePatient" ng-click="vm.CreatePatient()">Tạo mới</button>
             </div>
             <div class="col-md-6 col-sm-6">
                 <table class="table table-striped table-bordered col-md-12 col-sm-12">
@@ -85,7 +85,7 @@
                         <tr ng-repeat="pa in vm.patients">
                             <td>{{pa.Id}}</td>
                             <td>
-                                <button id="btnPatient_{{pa.Id}}" ng-click="vm.GetPatientById(pa.Id)">
+                                <button class="btn-block" id="btnPatient_{{pa.Id}}" ng-click="vm.GetPatientById(pa.Id)">
                                     {{pa.Name}}
                                 </button>                                
                             </td>
@@ -107,31 +107,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>123</td>
-                            <td>12/12/2015</td>
-                            <td>4</td>
+                        <tr ng-repeat="ph in vm.PatientHistories">
+                            <td>{{ph.PatientId}}</td>
+                            <td>
+                                <button class="btn-block" ng-click="vm.GetMedicineHistoriesByPatientId(ph.PatientId, ph.Date)">
+                                    {{ph.Date | date:'dd-MM-yyyy'}}
+                                </button>     
+                            </td>
+                            <td>{{ph.Count}}</td>
                         </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>12/12/2015</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>12/12/2015</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>12/12/2015</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>12/12/2015</td>
-                            <td>4</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
@@ -148,46 +133,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>123</td>
-                            <td>Vitamin D Phormon</td>
-                            <td>Hop</td>
-                            <td>10</td>
-                            <td>100000</td>
-                            <td>1000000</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>Vitamin D Phormon</td>
-                            <td>Hop</td>
-                            <td>10</td>
-                            <td>100000</td>
-                            <td>1000000</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>Vitamin D Phormon</td>
-                            <td>Hop</td>
-                            <td>10</td>
-                            <td>100000</td>
-                            <td>1000000</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>Vitamin D Phormon</td>
-                            <td>Hop</td>
-                            <td>10</td>
-                            <td>100000</td>
-                            <td>1000000</td>
-                        </tr>
-                        <tr>
-                            <td>123</td>
-                            <td>Vitamin D Phormon</td>
-                            <td>Hop</td>
-                            <td>10</td>
-                            <td>100000</td>
-                            <td>1000000</td>
-                        </tr>
+                        <!--<tr ng-repeat="mh in vm.MedicineHistories">
+
+                            <td>{{mh.Id}}</td>
+                            <td>{{mh.MedicineName}}</td>
+                            <td>{{mh.Unit}}</td>
+                            <td>{{mh.Count}}</td>
+                            <td>{{mh.Price}}</td>
+                            <td>{{mh.Count * ph.Price}}</td>                           
+                        </tr>-->
+                        
                     </tbody>
                     <tfoot>
                         <tr>
