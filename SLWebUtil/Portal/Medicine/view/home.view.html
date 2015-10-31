@@ -1,64 +1,141 @@
 ﻿
 
 <style>
-    
     input {
-        
-        text-align:center;
-        font-weight:bold;
+        text-align: center;
+        font-weight: bold;
     }
+
     .form-group {
-        margin-top: 0px ;
-        margin-bottom: 0px ;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
+
     td {
-        padding-left:10px;
-        text-align:center;
+        padding-left: 10px;
+        text-align: center;
     }
+    .divCornor{        
+        border: 2px solid #BDBDBD;
+        padding: 0px;
+    }
+    
+
 </style>
 <script type="text/javascript">
     function GetPatientsById(patientid) {
         angular.element(document.documentElement).scope().GetPatientsById(patientid);
     }
-    $(document).ready(function(){       
+    function GetPatientsByName(patientName) {
+        angular.element(document.documentElement).scope().GetPatientsByName(patientName);
+    }
+    function GetMedicineHistoriesByPatientId(PatientId, Date)
+    {
+        angular.element(document.documentElement).scope().GetMedicineHistoriesByPatientId(PatientId, Date);
+    }
+    function CheckUpdateCurrentMedicine()
+    {
+        angular.element(document.documentElement).scope().CheckUpdateCurrentMedicine();
+    }
+    function EditMedicineHistory(mhid)
+    {
+        alert(mhid);
+    }
+    $(document).ready(function () {
+        $("button").click(function () {
+            var id = this.id;
+            if (id == "btnToday")
+            {
+                debugger;
+                var PatientId = $("#txtCode").val();
+                var d = new Date();
+                var date = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
+                $("#datepicker").val(date);
+                date = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                GetMedicineHistoriesByPatientId(PatientId, date);
+            }
+        });
         $("input").keypress(function (e) {
             var id = this.id;
-            if (id == "txtCode")
-            {
+            if (id == "txtCode") {
                 var code = e.keyCode || e.which;
                 if (code == 13) { //Enter keycode
                     GetPatientsById($(this).val());
                 }
             }
+            if (id == "txtName") {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode
+                    GetPatientsByName($(this).val());
+                }
+            }
+            if (id == "txtMedicineName")
+            {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode
+                    $("#txtUnit").focus();
+                }                
+            }
+            if (id == "txtUnit") {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode
+                    $("#txtCount").focus();
+                }
+            }
+            if (id == "txtCount") {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode
+                    $("#txtPrice").focus();
+                }
+            }
+            if (id == "txtPrice") {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode
+                    CheckUpdateCurrentMedicine();
+                }
+            }
         });
-
+        $("input").focus(function (e) {
+            $(this).select();
+        });
+        var $zdp = $('#datepicker').data('Zebra_DatePicker');
+        $("#datepicker").Zebra_DatePicker({
+            //always_visible: $('#divDate'),
+            format: "d-m-Y",
+            onSelect: function (formatted_date, standard_date, js_date) {
+                debugger;
+                var PatientId = $("#txtCode").val();
+                GetMedicineHistoriesByPatientId(PatientId, standard_date);
+            }
+        });
     });
 </script>
 <section id="content">
+    <div class="loading" ng-show="vm.loading"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-5 col-sm-5 form-horizontal">       
+            <div class="col-md-5 col-sm-5 form-horizontal">
                 <div class="form-group">
-                    <label  class="col-md-3 col-sm-3 control-label">Mã số</label>
+                    <label class="col-md-3 col-sm-3 control-label">Mã số</label>
                     <div class="col-md-9 col-sm-9">
-                        <input  class="form-control" id="txtCode" ng-model="vm.currentPatient.Id">
+                        <input class="form-control" id="txtCode" ng-model="vm.currentPatient.Id">
                     </div>
-                </div>     
-                
+                </div>
+
                 <div class="form-group">
                     <label class="col-md-3 col-sm-3 control-label">Họ tên</label>
                     <div class="col-md-9 col-sm-9">
-                        <input class="form-control" id="txtName" ng-model="vm.currentPatient.Name" >
+                        <input class="form-control" id="txtName" ng-model="vm.currentPatient.Name">
                     </div>
-                </div> 
+                </div>
 
-
+                
                 <div class="form-group">
                     <label class="col-md-3 col-sm-3 control-label">Tuổi</label>
                     <div class="col-md-9 col-sm-9">
-                        <input class="form-control" id="txtAge" ng-model="vm.age" >
+                        <input class="form-control" id="txtAge" ng-model="vm.age">
                     </div>
-                </div> 
+                </div>
 
 
                 <div class="form-group">
@@ -66,19 +143,21 @@
                     <div class="col-md-9 col-sm-9">
                         <input class="form-control" id="txtPhone" ng-model="vm.currentPatient.Phone">
                     </div>
-                </div> 
-                
-                
-                           
+                </div>
+
+
+
             </div>
-            <div class="col-md-1 col-sm-1">
-                <button id="btnCreatePatient" ng-click="vm.CreatePatient()">Tạo mới</button>
+            <div class="col-md-1 col-sm-1" style="text-align:center;">
+                <button id="btnCreatePatient" ng-click="vm.CreatePatient()" style=" height:70px;">Tạo mới</button>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6 divCornor">
                 <table class="table table-striped table-bordered col-md-12 col-sm-12">
                     <thead>
                         <tr>
-                            <td>Code</td><td>Tên</td><td>Đ.Thoại</td>
+                            <td class="col-md-2 col-sm-2">Code</td>
+                            <td class="col-md-6 col-sm-6">Tên</td>
+                            <td class="col-md-4 col-sm-4">Đ.Thoại</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,7 +166,7 @@
                             <td>
                                 <button class="btn-block" id="btnPatient_{{pa.Id}}" ng-click="vm.GetPatientById(pa.Id)">
                                     {{pa.Name}}
-                                </button>                                
+                                </button>
                             </td>
                             <td>{{pa.Phone}}</td>
                         </tr>
@@ -95,9 +174,9 @@
                 </table>
             </div>
         </div>
-        <br/>
+        <br />
         <div class="row">
-            <div class="col-md-3 col-sm-3 ">
+            <div class="col-md-3 col-sm-3 divCornor">
                 <table class="table table-striped table-bordered  col-md-12 col-sm-12">
                     <thead>
                         <tr>
@@ -112,49 +191,58 @@
                             <td>
                                 <button class="btn-block" ng-click="vm.GetMedicineHistoriesByPatientId(ph.PatientId, ph.Date)">
                                     {{ph.Date | date:'dd-MM-yyyy'}}
-                                </button>     
+                                </button>
                             </td>
                             <td>{{ph.Count}}</td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-9 col-sm-9">
-                <table class="table table-striped table-bordered col-md-12 col-sm-12">
-                    <thead>
+            <div class="col-md-9 col-sm-9 divCornor">
+                <div id="divDate">
+                    <input style="float:left; font-size:20px;" id="datepicker" type="text" />
+                    <button id="btnToday" style="float:left; height:30px; margin-left:10px;">Hôm nay</button>
+                </div>
+                <table class="table table-striped table-bordered col-md-12 col-sm-12" id="tblMedicineHistory">
+                    
                         <tr>
-                            <td>ID</td>
-                            <td class="col-md-2 col-sm-4">Tên thuốc</td>
+                            <td class="col-md-1 col-sm-1">ID</td>
+                            <td class="col-md-3 col-sm-3">Tên thuốc</td>
                             <td class="col-md-2 col-sm-2">Đ.Vị</td>
-                            <td class="col-md-2 col-sm-2">S.Lượng</td>
+                            <td class="col-md-1 col-sm-1">S.Lượng</td>
                             <td class="col-md-3 col-sm-3">Đơn giá</td>
-                            <td>Thành tiền</td>
+                            <td class="col-md-3 col-sm-3"> Thành tiền</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <!--<tr ng-repeat="mh in vm.MedicineHistories">
-
-                            <td>{{mh.Id}}</td>
+                    
+                    
+                        <tr  ng-repeat="mh in vm.MedicineHistories" id="trMedicineHistory_{{mh.Id}}">
+                            <td>
+                                <button class="btn-block" ng-click="vm.EditMedicineHistory(mh.Id)">
+                                    {{mh.Id}}
+                                </button>
+                                
+                            </td>
                             <td>{{mh.MedicineName}}</td>
                             <td>{{mh.Unit}}</td>
-                            <td>{{mh.Count}}</td>
-                            <td>{{mh.Price}}</td>
-                            <td>{{mh.Count * ph.Price}}</td>                           
-                        </tr>-->
-                        
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td><label class="control-label" id="lblMHID"></label></td>
-                            <td><input id="txtMedicineName" class="form-control"/></td>
-                            <td><input id="txtUnit" class="form-control" /></td>
-                            <td><input id="txtCount" class="form-control" /></td>
-                            <td><input id="txtPrice" class="form-control" /></td>
-                            <td><label class="control-label" id="lblMHTotal"></label></td>
+                            <td>{{mh.Count.toLocaleString()}}</td>
+                            <td>{{mh.Price.toLocaleString()}}</td>
+                            <td>{{(mh.Count * mh.Price).toLocaleString()}}</td>  
                         </tr>
-                    </tfoot>
+                        <tr id="trEditMedicineHistory">
+                            <td><label class="control-label" id="lblMHID" >{{vm.currentMedicine.Id}}</label></td>
+                            <td><input id="txtMedicineName" class="form-control" ng-model="vm.currentMedicine.MedicineName" /></td>
+                            <td><input id="txtUnit" class="form-control" ng-model="vm.currentMedicine.Unit" /></td>
+                            <td><input id="txtCount" class="form-control" ng-model="vm.currentMedicine.Count" /></td>
+                            <td><input id="txtPrice" class="form-control" ng-model="vm.currentMedicine.Price" /></td>
+                            <td><label class="control-label" id="lblMHTotal">{{(vm.currentMedicine.Count * vm.currentMedicine.Price).toLocaleString()}}</label></td>
+                        </tr>    
+                    
                 </table>
+                
+                <div style="float:right">
+                    <label style="font-size:200%;"> {{vm.GetTotal().toLocaleString()}}</label>
+                </div>
             </div>
         </div>
     </div>

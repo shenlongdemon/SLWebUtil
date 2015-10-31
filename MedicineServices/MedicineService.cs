@@ -10,6 +10,8 @@ using Newtonsoft.Json;
 using System.Web.Script.Serialization;
 using Utilities;
 using System.Data.Entity;
+using System.Globalization;
+
 namespace Services
 {
     public class MedicineService
@@ -44,12 +46,13 @@ namespace Services
         }
         public async Task<dynamic> GetMedicineHistoriesByPatientId(object data) // PatientId && Date
         {
-            
-            dynamic inData = data.ToObject<dynamic>();
+
+            dynamic inData = data.ToDynamicObject();
             int PatientId = inData.PatientId;
-            DateTime Date = inData.PatientId;
+            DateTime Date = inData.Date;
             List<PatientHistory> list = await _patientHistoryRepo.Where(p => p.PatientId == PatientId
                                                                         && p.Date == Date).ToListAsync< PatientHistory>();
+            
             return list;
         }
         public async Task<dynamic> GetPatientHistoriesByPatientId(object data) // int
@@ -68,6 +71,50 @@ namespace Services
                                 }).ToList();
                 return group;
            
+        }
+        public async Task<dynamic> GetPatientsByName(object data)
+        {
+            return await Task.Run(() =>
+            {
+                string[] names = data.ToString().Split(" ");
+                List<Patient> list = new List<Patient>();
+                foreach (string name in names)
+                {
+                    var bns = _patientRepo.Where(p => p.Name.ToLower().Contains(name.ToLower())).ToList();
+                    list.AddRange(bns);
+                }
+                list = list.Distinct(new GenericCompare<Patient>(p => p.Id)).ToList();
+                return list;
+            });
+        }
+
+        public async Task<dynamic> UpdatePatientHistory(object data)
+        {
+            PatientHistory ph = data.ToObject<PatientHistory>();
+            if (ph.Id == 0)
+            {
+                PatientHistory newph = new PatientHistory();
+                newph.MedicineName = ph.MedicineName;
+                newph.Unit = ph.Unit;
+                newph.Count = ph.Count;
+                newph.Price = ph.Price;
+                newph.Date = ph.Date;
+                newph.PatientId = ph.PatientId;
+                ph = await _patientHistoryRepo.InsertAsync(newph);
+
+            }
+            else
+            {
+                int id = ph.Id;
+                PatientHistory src = _patientHistoryRepo.First(p => p.Id == id);
+                src.MedicineName = ph.MedicineName;
+                src.Unit = ph.Unit;
+                src.Count = ph.Count;
+                src.Price = ph.Price;
+                ph = _patientHistoryRepo.Update(src);
+                await _patientHistoryRepo.SaveChangesAsync();
+            }
+            return ph;
         }
 
     }

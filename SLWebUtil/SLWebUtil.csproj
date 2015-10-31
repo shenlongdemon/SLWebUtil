@@ -50,6 +50,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,9 +72,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -224,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Portal\Contents\Common.css" />
     <Content Include="Portal\Medicine\services\medicine.service.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.min.js" />
@@ -2797,6 +2799,22 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Portal\Scripts\zebra_datepicker.js" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\bootstrap.css" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\calendar-disabled.png" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\calendar.png" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\default.css" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\metallic.css" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\metallic\default-date.png" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\metallic\disabled-date.png" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\metallic\header.png" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\metallic\selected-date.png" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\reset.css" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\style.css" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\css\themes.png" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\js\core.js" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\js\zebra_datepicker.js" />
+    <Content Include="Portal\Scripts\Zebra_Datepicker\js\zebra_datepicker.src.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -3205,7 +3223,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
