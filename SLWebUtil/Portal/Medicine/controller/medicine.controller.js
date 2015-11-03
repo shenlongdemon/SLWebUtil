@@ -20,17 +20,33 @@
         vm.GetAge = GetAge;
         vm.GetTotal = GetTotal;
         vm.EditMedicineHistory = EditMedicineHistory;
+        vm.DeleteMedicineHistory = DeleteMedicineHistory
+        vm.DeletePatient = DeletePatient;
         $rootScope.GetPatientsById = GetPatientsById;
         $rootScope.GetPatientsByName = GetPatientsByName;
+        $rootScope.GetPatientsByPhone = GetPatientsByPhone;
         $rootScope.GetMedicineHistoriesByPatientId = GetMedicineHistoriesByPatientId;
         $rootScope.CheckUpdateCurrentMedicine = CheckUpdateCurrentMedicine;
-        
+        vm.ClearForSearch = ClearForSearch;
         
         vm.loading = false;
         vm.age = null;
-        function CreatePatient() {
-            var a = 10;
+        function ClearForSearch(name, value)
+        {
+            vm.currentPatient =
+            vm.PatientHistories = [];
+            vm.MedicineHistories = [];
+            if (name == "Id") {
+                vm.currentPatient.Id = value;
+            }
+            else if (name == "Name") {
+                vm.currentPatient.Name = value;
+            }
+            else if (name == "Phone") {
+                vm.currentPatient.Phone = value;
+            }
         }
+       
         function GetPatientHistoriesByPatientId(patientid)
         {
             MedicineService.GetPatientHistoriesByPatientId(patientid)
@@ -56,6 +72,7 @@
         }
         function GetPatientsById(patientid) {
             vm.loading = true;
+            ClearForSearch("Id", patientid);
             MedicineService.GetPatientsById(patientid)
                 .success(function (res) {
                     vm.patients = res.Data;
@@ -67,7 +84,20 @@
         }
         function GetPatientsByName(patientName) {
             vm.loading = true;
+            ClearForSearch("Name", patientName);
             MedicineService.GetPatientsByName(patientName)
+                .success(function (res) {
+                    vm.patients = res.Data;
+                    vm.loading = false;;
+                })
+                .error(function () {
+                    vm.loading = false;
+                });
+        }
+        function GetPatientsByPhone(phone) {
+            vm.loading = true;
+            ClearForSearch("Phone", phone);
+            MedicineService.GetPatientsByPhone(phone)
                 .success(function (res) {
                     vm.patients = res.Data;
                     vm.loading = false;;
@@ -78,7 +108,9 @@
         }
         function CreatePatient()
         {
+            
             if (vm.currentPatient.Id == 0 || vm.currentPatient.Id == undefined || vm.currentPatient.Id == "") {
+                vm.loading = true;
                 vm.currentPatient.Id = 0;
                 var now = new Date();
                 var y = now.getFullYear() - vm.age;
@@ -87,13 +119,14 @@
                 MedicineService.CreatePatient(vm.currentPatient)
                     .success(function (res) {
                         vm.currentPatient = res.Data;
+                        vm.loading = false;
                     })
                     .error(function () {
-
+                        vm.loading = true;
                     });
             }
             else{
-                alert("Bạn phái xoá dữ liệu trước khi tạo mới !!!")
+                alert("Bạn phải xoá dữ liệu trước khi tạo mới !!!")
                 vm.currentPatient = null;
                 alert("Mời bạn nhập lại !!!")
             }
@@ -138,6 +171,81 @@
             
             return total;
         }
+        function DeletePatient(id)
+        {
+           
+
+
+
+
+
+
+
+            var pt = vm.patients.filter(function (a) { return a.Id == id })[0];
+            if (pt != null && pt != undefined) {
+
+
+
+
+                $("body").mobiDialog({
+                    type: "confirm",
+                    text: "Bạn có muốn xoá " + pt.Name + " không ???",
+                    position: "middle",
+                    okText: "Có",
+                    cancelText: "Không",
+                    ok: function () {
+                        vm.loading = true;
+                        MedicineService.DeletePatient(id)
+                        .success(function (res) {
+                            if (res.Data == id) {
+                                vm.patients = jQuery.grep(vm.patients, function (value) {
+                                    return value.Id != id;
+                                });
+                                vm.MedicineHistories = jQuery.grep(vm.MedicineHistories, function (value) {
+                                    return value.PatientId != id;
+                                });
+                                vm.PatientHistories = jQuery.grep(vm.PatientHistories, function (value) {
+                                    return value.PatientId != id;
+                                });
+                                if (vm.currentPatient.Id == id) {
+                                    vm.currentPatient = {};
+                                }
+                            }
+                            vm.loading = false;
+                        })
+                        .error(function () {
+                            vm.loading = false;
+                        });
+                    },
+                    cancel: function () {  }
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+        }
         function EditMedicineHistory(medicineHistoryId)
         {
             var mhs = $.grep(vm.MedicineHistories, function (e) { return e.Id == medicineHistoryId; });
@@ -163,7 +271,36 @@
                 trMedicineHistory.remove();
             }
         }
-        
+        function DeleteMedicineHistory(id)
+        {
+            var mh = vm.MedicineHistories.filter(function (a) { return a.Id == id })[0];
+            if (mh != null && mh != undefined) {
+
+                $("body").mobiDialog({
+                    type: "confirm",
+                    text: "Bạn có muốn xoá " + mh.MedicineName + " không ???",
+                    position: "middle",
+                    okText: "Có",
+                    cancelText: "Không",
+                    ok: function () {
+                        vm.loading = true;
+                        MedicineService.DeleteMedicineHistory(id)
+                        .success(function (res) {
+                            if (res.Data == id) {
+                                vm.MedicineHistories = jQuery.grep(vm.MedicineHistories, function (value) {
+                                    return value.Id != id;
+                                });
+                            }
+                            vm.loading = false;
+                        })
+                        .error(function () {
+                            vm.loading = false;
+                        });
+                    },
+                    cancel: function () { }
+                });                
+            }
+        }
         function CheckUpdateCurrentMedicine()
         {
             vm.loading = true;

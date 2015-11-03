@@ -6,8 +6,9 @@
         .config(config)        
         .constant('Constants', 
             {
-                MEDICINE_API: "http://localhost:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
-                
+                MEDICINE_API: "http://192.168.1.108:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
+                //MEDICINE_API: "http://localhost:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
+                //MEDICINE_API: "http://www.slwebutil.somee.com/api/service/doaction?service=medicine&act={act}&obj={obj}"                
             }
         )
         .run(run);
@@ -24,7 +25,17 @@
                 templateUrl: 'Medicine/view/home.view.html',
                 controllerAs: 'vm'
             })
+            .when('/Facebook', {
+                controller: 'FacebookController',
+                templateUrl: 'Facebook/view/home.view.html',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/landingpage' });
+
+        $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+        $httpProvider.defaults.headers.common['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, DELETE, PUT';
+        $httpProvider.defaults.headers.common['Access-Control-Allow-Headers'] = 'x-requested-with, Content-Type, origin, authorization, accept, client-security-token';
+
     }
 
 

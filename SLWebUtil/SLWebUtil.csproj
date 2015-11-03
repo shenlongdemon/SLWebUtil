@@ -226,6 +226,8 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Portal\Contents\Common.css" />
+    <Content Include="Portal\Facebook\controller\facebook.controller.js" />
+    <Content Include="Portal\Facebook\services\facebook.service.js" />
     <Content Include="Portal\Medicine\services\medicine.service.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.min.js" />
@@ -2799,6 +2801,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\icons\error.png" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\icons\face-sad.png" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\icons\face-smile.png" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\icons\loading.gif" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\icons\question.png" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\icons\succeed.png" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\icons\warning.png" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\index.html" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\jquery.mobiDialog-1.0.css" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\jquery.mobiDialog-1.0.js" />
     <Content Include="Portal\Scripts\zebra_datepicker.js" />
     <Content Include="Portal\Scripts\Zebra_Datepicker\css\bootstrap.css" />
     <Content Include="Portal\Scripts\Zebra_Datepicker\css\calendar-disabled.png" />
@@ -3185,6 +3197,8 @@
     <Content Include="Portal\Scripts\bootstrap-3.3.5\test-infra\s3_cache.py" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\test-infra\uncached-npm-install.sh" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\_config.yml" />
+    <Content Include="Portal\Facebook\view\home.view.html" />
+    <Content Include="Portal\Scripts\mobile_notification_dialog\README.md" />
     <None Include="Properties\PublishProfiles\SLWebUtil.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

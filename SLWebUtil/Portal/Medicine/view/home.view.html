@@ -19,7 +19,10 @@
         border: 2px solid #BDBDBD;
         padding: 0px;
     }
-    
+    .buttonDelete {
+        background-color:red;
+        color:white;
+    }
 
 </style>
 <script type="text/javascript">
@@ -28,6 +31,9 @@
     }
     function GetPatientsByName(patientName) {
         angular.element(document.documentElement).scope().GetPatientsByName(patientName);
+    }
+    function GetPatientsByPhone(phone) {
+        angular.element(document.documentElement).scope().GetPatientsByPhone(phone);
     }
     function GetMedicineHistoriesByPatientId(PatientId, Date)
     {
@@ -42,6 +48,26 @@
         alert(mhid);
     }
     $(document).ready(function () {
+        $('input').on('keydown', function (event) {
+            var id = this.id;
+            if (id == "txtCode") {
+                if (event.which == 9) {
+                    GetPatientsById($(this).val());
+                }
+            }
+            else if (id == "txtPhone") {
+                if (event.which == 9) {
+                    GetPatientsByPhone($(this).val());
+                }
+            }
+            
+            if (id == "txtPrice") {                
+                if (event.which == 9) { //Enter keycode
+                    CheckUpdateCurrentMedicine();
+                }
+            }
+
+        });
         $("button").click(function () {
             var id = this.id;
             if (id == "btnToday")
@@ -67,6 +93,12 @@
                 var code = e.keyCode || e.which;
                 if (code == 13) { //Enter keycode
                     GetPatientsByName($(this).val());
+                }
+            }
+            if (id == "txtPhone") {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode
+                    GetPatientsByPhone($(this).val());
                 }
             }
             if (id == "txtMedicineName")
@@ -118,7 +150,7 @@
                 <div class="form-group">
                     <label class="col-md-3 col-sm-3 control-label">Mã số</label>
                     <div class="col-md-9 col-sm-9">
-                        <input class="form-control" id="txtCode" ng-model="vm.currentPatient.Id">
+                        <input type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" id="txtCode" ng-model="vm.currentPatient.Id">
                     </div>
                 </div>
 
@@ -133,7 +165,7 @@
                 <div class="form-group">
                     <label class="col-md-3 col-sm-3 control-label">Tuổi</label>
                     <div class="col-md-9 col-sm-9">
-                        <input class="form-control" id="txtAge" ng-model="vm.age">
+                        <input type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" id="txtAge" ng-model="vm.age">
                     </div>
                 </div>
 
@@ -168,7 +200,12 @@
                                     {{pa.Name}}
                                 </button>
                             </td>
-                            <td>{{pa.Phone}}</td>
+                            <td>
+                                <button class="btn-block buttonDelete" ng-click="vm.DeletePatient(pa.Id)">
+                                    {{pa.Phone}}
+                                </button>
+                            
+                           </td>
                         </tr>
                     </tbody>
                 </table>
@@ -227,14 +264,18 @@
                             <td>{{mh.Unit}}</td>
                             <td>{{mh.Count.toLocaleString()}}</td>
                             <td>{{mh.Price.toLocaleString()}}</td>
-                            <td>{{(mh.Count * mh.Price).toLocaleString()}}</td>  
+                            <td>
+                                <button class="btn-block buttonDelete" ng-click="vm.DeleteMedicineHistory(mh.Id)">
+                                    {{(mh.Count * mh.Price).toLocaleString()}}
+                                </button>
+                            </td>  
                         </tr>
                         <tr id="trEditMedicineHistory">
                             <td><label class="control-label" id="lblMHID" >{{vm.currentMedicine.Id}}</label></td>
                             <td><input id="txtMedicineName" class="form-control" ng-model="vm.currentMedicine.MedicineName" /></td>
                             <td><input id="txtUnit" class="form-control" ng-model="vm.currentMedicine.Unit" /></td>
-                            <td><input id="txtCount" class="form-control" ng-model="vm.currentMedicine.Count" /></td>
-                            <td><input id="txtPrice" class="form-control" ng-model="vm.currentMedicine.Price" /></td>
+                            <td><input id="txtCount" type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" ng-model="vm.currentMedicine.Count" /></td>
+                            <td><input id="txtPrice" type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" ng-model="vm.currentMedicine.Price" /></td>
                             <td><label class="control-label" id="lblMHTotal">{{(vm.currentMedicine.Count * vm.currentMedicine.Price).toLocaleString()}}</label></td>
                         </tr>    
                     

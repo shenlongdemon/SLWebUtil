@@ -74,20 +74,43 @@ namespace Services
         }
         public async Task<dynamic> GetPatientsByName(object data)
         {
-            return await Task.Run(() =>
+            
+            string[] names = data.ToString().ToLower().ConvertUniCodeToASCII().Split(" ");
+            IQueryable<Patient> list = _patientRepo.GetAll();
+            foreach (string name in names)
             {
-                string[] names = data.ToString().Split(" ");
-                List<Patient> list = new List<Patient>();
-                foreach (string name in names)
-                {
-                    var bns = _patientRepo.Where(p => p.Name.ToLower().Contains(name.ToLower())).ToList();
-                    list.AddRange(bns);
-                }
-                list = list.Distinct(new GenericCompare<Patient>(p => p.Id)).ToList();
-                return list;
-            });
+                list = list.Where(p => p.Name.ToLower().Contains(name.ToLower()));                  
+            }
+            return await list.ToListAsync();
+            
         }
-
+        public async Task<dynamic> GetPatientsByPhone(object data)
+        {            
+            string fone = data.ToString();
+            List<Patient> list = await _patientRepo.Where(p => p.Phone.Contains(fone)).ToListAsync();                   
+            return list;            
+        }
+        public async Task<dynamic> DeleteMedicineHistory(object data)
+        {
+            int id = int.Parse(data.ToString());
+            PatientHistory ph = _patientHistoryRepo.First(p=>p.Id == id);
+            _patientHistoryRepo.Delete(ph);
+            int res = await _patientHistoryRepo.SaveChangesAsync();
+            
+            return res == 0 ? res : id;
+            
+        }
+        public async Task<dynamic> DeletePatient(object data)
+        {            
+            int id = int.Parse(data.ToString());
+            IQueryable<PatientHistory> phs = _patientHistoryRepo.Where(p => p.PatientId == id);
+            _patientHistoryRepo.DeleteAll(phs);
+            int re = await _patientHistoryRepo.SaveChangesAsync();
+            Patient pt = _patientRepo.First(p=>p.Id == id);
+            _patientRepo.Delete(pt);
+            int res = await _patientRepo.SaveChangesAsync();
+            return (res == 0 && re == 0) ? 0 : id;           
+        }
         public async Task<dynamic> UpdatePatientHistory(object data)
         {
             PatientHistory ph = data.ToObject<PatientHistory>();

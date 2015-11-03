@@ -1,0 +1,144 @@
+/* 弹窗 */
+.warn_layer, .alert_layer, .confirm_layer, .prompt_layer{
+	padding:11px 14px;
+	background:rgba(0,0,0,0.7);
+	font-size:12px;
+	color:#fff;
+	border-radius:7px;
+	position:absolute;
+	z-index:9999;
+	max-width:400px;
+	overflow:hidden;
+}
+.warn_info, .alert_info, .confirm_info, .prompt_info{
+	height:25px;
+	line-height:25px;
+}
+.alert_info, .confirm_info{
+	margin-bottom:40px;
+}
+.prompt_condiv{
+	margin-top:10px;
+	margin-bottom:40px;
+}
+.prompt_input{
+	/*width:100%;*/
+	height:25px;
+	background: #ECECEC;
+	border: none;
+	border-radius: 5px;
+}
+.warn_info img, .alert_info img, .confirm_info img, .prompt_info img{
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+}
+.warn_text, .alert_text, .confirm_text, .prompt_text{
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:5px;
+}
+
+.warn_btn, .alert_btn, .confirm_btn, .prompt_btn{ 
+	position:absolute;
+	border-top:2px solid #838383;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	height:40px;
+}
+.alert_ok{
+	position: relative;
+	border:none;
+	background:none;
+	color:#fff;
+	width:100%;
+	height:100%;
+	outline:none;
+}
+.confirm_ok, .confirm_cancel, .prompt_ok, .prompt_cancel{
+	position:relative;
+	border:none;
+	background:none;
+	color:#fff;
+	width:50%;
+	height:40px;
+	outline:none;
+	box-sizing:border-box;
+}
+.confirm_ok, .prompt_ok{
+	left:0px;
+}
+.confirm_cancel, .prompt_cancel{
+	right:0px;
+}
+button[class$='_ok'] img, button[class$='_cancel'] img{ 
+	vertical-align: top;
+	height:14px;
+	margin-right: 2px;
+}
+
+
+/* 渐变过渡 */
+.transition_layer{
+	opacity:0;
+	transition:opacity 1s ease 0s;
+}
+
+
+/* top */
+.warn_layer.top, .warn_layer.bottom, 
+.alert_layer.top, .alert_layer.bottom, 
+.confirm_layer.top, .confirm_layer.bottom,
+.prompt_layer.top, .prompt_layer.bottom {
+	font-size:12px;
+	color:#ff4f4f;
+	max-width:100%;
+	margin-bottom: 0px;
+}
+.warn_layer.top .warn_info, .warn_layer.bottom .warn_info, 
+.alert_layer.top .alert_info, .alert_layer.bottom .alert_info, 
+.confirm_layer.top .confirm_info, .confirm_layer.bottom .confirm_info,
+.prompt_layer.top .prompt_info, .prompt_layer.bottom .prompt_info {
+	margin-bottom: 0px;
+	/*float: left;*/
+}
+.prompt_layer.top .prompt_condiv, .prompt_layer.bottom .prompt_condiv{ 
+	margin-bottom: 0px;
+}
+.alert_layer.top .alert_btn, .alert_layer.bottom .alert_btn, 
+.confirm_layer.top .confirm_btn, .confirm_layer.bottom .confirm_btn,
+.prompt_layer.top .prompt_btn, .prompt_layer.bottom .prompt_btn {
+	height: 100%;
+	width: auto;
+	border-top: none;
+	border-left: 2px solid #838383;
+	left:auto;
+	right:0px;
+	top:0px;
+}
+.alert_layer.top .alert_ok, .alert_layer.bottom .alert_ok, 
+.confirm_layer.top .confirm_ok, .confirm_layer.bottom .confirm_ok,
+.confirm_layer.top .confirm_cancel, .confirm_layer.bottom .confirm_cancel,
+.prompt_layer.top .prompt_ok, .prompt_layer.bottom .prompt_ok,
+.prompt_layer.top .prompt_cancel, .prompt_layer.bottom .prompt_cancel {
+	height: 100%;
+	width: auto;
+	border-top: none;
+	left:auto;
+	display: inline-block;
+	padding:0 20px;
+}
+.confirm_layer.top .confirm_cancel, .confirm_layer.bottom .confirm_cancel,
+.prompt_layer.top .prompt_cancel, .prompt_layer.bottom .prompt_cancel { 
+	border-left: 2px solid #838383;
+}
+.prompt_layer.top .prompt_input, .prompt_layer.bottom .prompt_input{ 
+	width:50%;
+}
+
+/* 遮罩层 */
+#screen_lock{ 
+	background: #000;
+	opacity: 0.5;
+}

@@ -1,0 +1,12 @@
+﻿<script>
+    $(document).ready(function () {
+        var str = "javascript:(function(){alert(jQuery.fn.jquery);})();";
+        $("#ahref").attr("href", str);
+    });
+</script>
+<section id="content">
+    <div class="loading" ng-show="vm.loading"></div>
+    <div class="container-fluid">
+        <a id="ahref" href="alert('aaaa')">aaaaaaaaaaa</a>
+    </div>
+</section>

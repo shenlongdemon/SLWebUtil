@@ -15,6 +15,9 @@
         service.GetPatientHistoriesByPatientId = GetPatientHistoriesByPatientId;
         service.GetPatientsByName = GetPatientsByName;
         service.UpdatePatientHistory = UpdatePatientHistory;
+        service.DeleteMedicineHistory = DeleteMedicineHistory;
+        service.DeletePatient = DeletePatient;
+        service.GetPatientsByPhone = GetPatientsByPhone;
         return service;
 
 
@@ -51,6 +54,21 @@
         {
         var data = JSON.stringify(patienthistory);
             var api = Constants.MEDICINE_API.replace("{act}", "UpdatePatientHistory").replace("{obj}", data);
+            return $http.get(api);
+        }
+        function DeleteMedicineHistory(id)
+        {
+            var api = Constants.MEDICINE_API.replace("{act}", "DeleteMedicineHistory").replace("{obj}", id);
+            return $http.get(api);
+        }
+        function DeletePatient(id)
+        {
+            var api = Constants.MEDICINE_API.replace("{act}", "DeletePatient").replace("{obj}", id);
+            return $http.get(api);
+        }
+        function GetPatientsByPhone(phone)
+        {
+            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientsByPhone").replace("{obj}", phone);
             return $http.get(api);
         }
     }
