@@ -33,7 +33,7 @@
         vm.age = null;
         function ClearForSearch(name, value)
         {
-            vm.currentPatient =
+            vm.currentPatient = {};
             vm.PatientHistories = [];
             vm.MedicineHistories = [];
             if (name == "Id") {
