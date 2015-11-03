@@ -226,8 +226,12 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Portal\Contents\Common.css" />
-    <Content Include="Portal\Facebook\controller\facebook.controller.js" />
-    <Content Include="Portal\Facebook\services\facebook.service.js" />
+    <Content Include="Portal\Facebook\controller\facebook.controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\Facebook\services\facebook.service.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Portal\Medicine\services\medicine.service.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.min.js" />
@@ -3197,7 +3201,9 @@
     <Content Include="Portal\Scripts\bootstrap-3.3.5\test-infra\s3_cache.py" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\test-infra\uncached-npm-install.sh" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\_config.yml" />
-    <Content Include="Portal\Facebook\view\home.view.html" />
+    <Content Include="Portal\Facebook\view\home.view.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Portal\Scripts\mobile_notification_dialog\README.md" />
     <None Include="Properties\PublishProfiles\SLWebUtil.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

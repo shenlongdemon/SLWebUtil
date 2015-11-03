@@ -125,10 +125,15 @@
                         vm.loading = true;
                     });
             }
-            else{
-                alert("Bạn phải xoá dữ liệu trước khi tạo mới !!!")
+            else {
+               
+                $("body").mobiDialog({
+                    type: "alert",
+                    text: "Bạn phải xoá dữ liệu trước khi tạo mới !!!",
+                    position: "middle",
+                    cancel: function () { console.log("You clicked Cancel"); }
+                });                
                 vm.currentPatient = null;
-                alert("Mời bạn nhập lại !!!")
             }
 
         }
