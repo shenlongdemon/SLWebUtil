@@ -110,7 +110,7 @@ namespace Services
         {            
             int id = int.Parse(data.ToString());
             IQueryable<PatientHistory> phs = _patientHistoryRepo.Where(p => p.PatientId == id);
-            _patientHistoryRepo.DeleteAll(phs);
+            _patientHistoryRepo.DeleteAll(phs);             
             int re = await _patientHistoryRepo.SaveChangesAsync();
             Patient pt = _patientRepo.First(p=>p.Id == id);
             _patientRepo.Delete(pt);

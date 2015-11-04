@@ -43,7 +43,9 @@
     {
         angular.element(document.documentElement).scope().CheckUpdateCurrentMedicine();
     }
-    
+    function SetCurrentMedicineName(name) {
+        angular.element(document.documentElement).scope().SetCurrentMedicineName(name);
+    }
     $(document).ready(function () {
         
        
@@ -104,6 +106,7 @@
             {
                 var code = e.keyCode || e.which;
                 if (code == 13) { //Enter keycode
+                    SetCurrentMedicineName($(this).val());
                     $("#txtUnit").focus();
                 }                
             }

@@ -34,7 +34,7 @@
         $rootScope.GetPatientsByPhone = GetPatientsByPhone;
         $rootScope.GetMedicineHistoriesByPatientId = GetMedicineHistoriesByPatientId;
         $rootScope.CheckUpdateCurrentMedicine = CheckUpdateCurrentMedicine;
-        
+        $rootScope.SetCurrentMedicineName = SetCurrentMedicineName;
         initController();
         function initController()
         {            
@@ -57,7 +57,10 @@
                 });
         }
         
-
+        function SetCurrentMedicineName(name)
+        {
+            vm.currentMedicine.MedicineName = name;
+        }
         function ClearForSearch(name, value)
         {
             vm.currentPatient = {};
@@ -207,21 +210,9 @@
             return total;
         }
         function DeletePatient(id)
-        {
-           
-
-
-
-
-
-
-
+        {          
             var pt = vm.patients.filter(function (a) { return a.Id == id })[0];
             if (pt != null && pt != undefined) {
-
-
-
-
                 $("body").mobiDialog({
                     type: "confirm",
                     text: "Bạn có muốn xoá " + pt.Name + " không ???",
@@ -253,31 +244,7 @@
                         });
                     },
                     cancel: function () {  }
-                });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                });              
 
             }
         }

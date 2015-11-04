@@ -234,7 +234,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Portal\Medicine\services\medicine.service.js" />
-    <Content Include="Portal\Scripts\ajax\ajax.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.min.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-aria.js" />
