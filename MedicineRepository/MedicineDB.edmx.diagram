@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4355e98b2a5b4fde956b1e47e52dbd32" Name="Diagram1">
-        <EntityTypeShape EntityType="slwebutilModel.Medicine" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="slwebutilModel.Medicine" Width="1.5" PointX="5.375" PointY="1.375" />
         <EntityTypeShape EntityType="slwebutilModel.Patient" Width="1.5" PointX="0.75" PointY="1" />
         <EntityTypeShape EntityType="slwebutilModel.PatientHistory" Width="1.5" PointX="3" PointY="0.75" />
         <AssociationConnector Association="slwebutilModel.FK__PatientHi__Patie__267ABA7A" />

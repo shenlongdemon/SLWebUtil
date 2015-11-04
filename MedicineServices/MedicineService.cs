@@ -90,6 +90,12 @@ namespace Services
             List<Patient> list = await _patientRepo.Where(p => p.Phone.Contains(fone)).ToListAsync();                   
             return list;            
         }
+        public async Task<dynamic> GetMedicineNames(object data)
+        {
+            List<string> list = await _patientHistoryRepo.GetAll().Select(p=>p.MedicineName).ToListAsync();
+            return list;
+        }
+        
         public async Task<dynamic> DeleteMedicineHistory(object data)
         {
             int id = int.Parse(data.ToString());

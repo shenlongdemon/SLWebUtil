@@ -43,11 +43,10 @@
     {
         angular.element(document.documentElement).scope().CheckUpdateCurrentMedicine();
     }
-    function EditMedicineHistory(mhid)
-    {
-        alert(mhid);
-    }
+    
     $(document).ready(function () {
+        
+       
         $('input').on('keydown', function (event) {
             var id = this.id;
             if (id == "txtCode") {
@@ -134,8 +133,7 @@
         $("#datepicker").Zebra_DatePicker({
             //always_visible: $('#divDate'),
             format: "d-m-Y",
-            onSelect: function (formatted_date, standard_date, js_date) {
-                debugger;
+            onSelect: function (formatted_date, standard_date, js_date) {                
                 var PatientId = $("#txtCode").val();
                 GetMedicineHistoriesByPatientId(PatientId, standard_date);
             }
@@ -240,6 +238,7 @@
                 <div id="divDate">
                     <input style="float:left; font-size:20px;" id="datepicker" type="text" />
                     <button id="btnToday" style="float:left; height:30px; margin-left:10px;">Hôm nay</button>
+                    <img style="float:left; margin-left:10px;" ng-show="vm.loadingback" src="./Contents/Images/loader.gif" />
                 </div>
                 <table class="table table-striped table-bordered col-md-12 col-sm-12" id="tblMedicineHistory">
                     

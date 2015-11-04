@@ -13,6 +13,7 @@
         vm.currentPatient = null;
         vm.PatientHistories = [];
         vm.MedicineHistories = [];
+        vm.MedicineNames = [];
         vm.GetPatientById = GetPatientById;
         vm.GetPatientHistoriesByPatientId = GetPatientHistoriesByPatientId;
         vm.GetMedicineHistoriesByPatientId = GetMedicineHistoriesByPatientId;
@@ -22,15 +23,41 @@
         vm.EditMedicineHistory = EditMedicineHistory;
         vm.DeleteMedicineHistory = DeleteMedicineHistory
         vm.DeletePatient = DeletePatient;
+        vm.GetMedicineNames = GetMedicineNames;
+        vm.ClearForSearch = ClearForSearch;
+        vm.loading = false;
+        vm.loadingback = false;
+        vm.age = null;
+
         $rootScope.GetPatientsById = GetPatientsById;
         $rootScope.GetPatientsByName = GetPatientsByName;
         $rootScope.GetPatientsByPhone = GetPatientsByPhone;
         $rootScope.GetMedicineHistoriesByPatientId = GetMedicineHistoriesByPatientId;
         $rootScope.CheckUpdateCurrentMedicine = CheckUpdateCurrentMedicine;
-        vm.ClearForSearch = ClearForSearch;
         
-        vm.loading = false;
-        vm.age = null;
+        initController();
+        function initController()
+        {            
+            GetMedicineNames();            
+        }
+        
+        function GetMedicineNames()
+        {
+            vm.loadingback = true;
+            MedicineService.GetMedicineNames()
+                .success(function (res) {
+                    vm.MedicineNames = res.Data;
+                    $("#txtMedicineName").autocomplete({
+                        source: vm.MedicineNames
+                    });
+                    vm.loadingback = false;
+                })
+                .error(function () {
+                    vm.loadingback = false;
+                });
+        }
+        
+
         function ClearForSearch(name, value)
         {
             vm.currentPatient = {};
@@ -65,6 +92,7 @@
                     vm.currentPatient = res.Data;
                     GetAge();
                     GetPatientHistoriesByPatientId(patientid);
+                    GetMedicineNames();
                 })
                 .error(function () {
                     vm.loading = false;
@@ -120,6 +148,7 @@
                     .success(function (res) {
                         vm.currentPatient = res.Data;
                         vm.loading = false;
+                        GetMedicineNames();
                     })
                     .error(function () {
                         vm.loading = true;
@@ -162,6 +191,7 @@
                    .success(function (res) {
                        vm.MedicineHistories = res.Data;
                        vm.loading = false;
+                       GetMedicineNames();
                    })
                    .error(function () {
                        vm.loading = false;
@@ -348,6 +378,7 @@
                        vm.MedicineHistories.push(vm.currentMedicine);
                        vm.currentMedicine = null;                       
                        vm.loading = false;
+                       GetMedicineNames();
                    })
                    .error(function () {
                        vm.loading = false;

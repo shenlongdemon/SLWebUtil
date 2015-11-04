@@ -9,10 +9,9 @@
 
 namespace MedicineRepository
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-
+    
     public partial class PatientHistory
     {
         public int Id { get; set; }
@@ -22,8 +21,7 @@ namespace MedicineRepository
         public int Count { get; set; }
         public int Price { get; set; }
         public string MedicineName { get; set; }
-
-        [JsonIgnore]
+    
         public virtual Patient Patient { get; set; }
     }
 }

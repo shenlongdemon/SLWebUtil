@@ -226,6 +226,7 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Portal\Contents\Common.css" />
+    <Content Include="Portal\Contents\Images\loader.gif" />
     <Content Include="Portal\Facebook\controller\facebook.controller.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -233,6 +234,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Portal\Medicine\services\medicine.service.js" />
+    <Content Include="Portal\Scripts\ajax\ajax.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.min.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-aria.js" />

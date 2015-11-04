@@ -18,9 +18,14 @@
         service.DeleteMedicineHistory = DeleteMedicineHistory;
         service.DeletePatient = DeletePatient;
         service.GetPatientsByPhone = GetPatientsByPhone;
+        service.GetMedicineNames = GetMedicineNames;
         return service;
 
-
+        
+        function GetMedicineNames() {
+            var api = Constants.MEDICINE_API.replace("{act}", "GetMedicineNames").replace("{obj}", 0);
+            return $http.get(api);
+        }
 
         function GetPatientById(patientid) {
             var api = Constants.MEDICINE_API.replace("{act}", "GetPatientById").replace("{obj}", patientid);
