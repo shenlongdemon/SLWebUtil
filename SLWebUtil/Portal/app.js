@@ -36,7 +36,13 @@
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', '$injector'];
     function run($rootScope, $location, $cookieStore, $http,$injector) {    
-        
+        $injector.get("$http").defaults.transformRequest = function(data, headersGetter) {      
+
+            headersGetter()['Authorization'] = "aaaaaaaaaaaaaaaa";
+            if (data) { 
+                return angular.toJson(data); 
+            } 
+        };   
     }
 
 })();

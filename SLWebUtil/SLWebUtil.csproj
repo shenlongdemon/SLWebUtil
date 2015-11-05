@@ -2816,6 +2816,7 @@
     <Content Include="Portal\Scripts\mobile_notification_dialog\index.html" />
     <Content Include="Portal\Scripts\mobile_notification_dialog\jquery.mobiDialog-1.0.css" />
     <Content Include="Portal\Scripts\mobile_notification_dialog\jquery.mobiDialog-1.0.js" />
+    <Content Include="Portal\Scripts\moment.js" />
     <Content Include="Portal\Scripts\zebra_datepicker.js" />
     <Content Include="Portal\Scripts\Zebra_Datepicker\css\bootstrap.css" />
     <Content Include="Portal\Scripts\Zebra_Datepicker\css\calendar-disabled.png" />

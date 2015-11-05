@@ -46,8 +46,11 @@
     function SetCurrentMedicineName(name) {
         angular.element(document.documentElement).scope().SetCurrentMedicineName(name);
     }
-    $(document).ready(function () {
-        
+    function SetCurrentDate()
+    {
+        $("#datepicker").val(moment().format("D-M-YYYY")).data('Zebra_DatePicker');
+    }
+    $(document).ready(function () {       
        
         $('input').on('keydown', function (event) {
             var id = this.id;
@@ -73,7 +76,6 @@
             var id = this.id;
             if (id == "btnToday")
             {
-                debugger;
                 var PatientId = $("#txtCode").val();
                 var d = new Date();
                 var date = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
@@ -126,6 +128,7 @@
                 var code = e.keyCode || e.which;
                 if (code == 13) { //Enter keycode
                     CheckUpdateCurrentMedicine();
+                    $("#txtMedicineName").focus();
                 }
             }
         });
@@ -134,13 +137,13 @@
         });
         var $zdp = $('#datepicker').data('Zebra_DatePicker');
         $("#datepicker").Zebra_DatePicker({
-            //always_visible: $('#divDate'),
             format: "d-m-Y",
             onSelect: function (formatted_date, standard_date, js_date) {                
                 var PatientId = $("#txtCode").val();
                 GetMedicineHistoriesByPatientId(PatientId, standard_date);
             }
         });
+        SetCurrentDate();
     });
 </script>
 <section id="content">

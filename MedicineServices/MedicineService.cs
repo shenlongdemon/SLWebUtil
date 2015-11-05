@@ -19,6 +19,7 @@ namespace Services
         private EFRepository<Patient> _patientRepo = MedicineRepo.Instance().GetRepo< Patient>();
         private EFRepository<PatientHistory> _patientHistoryRepo = MedicineRepo.Instance().GetRepo<PatientHistory>();
         public MedicineService(){}
+        [Authorize]
         public async Task<dynamic> GetPatientById(object patientId)
         {
             return await Task.Run(() => 
@@ -146,5 +147,9 @@ namespace Services
             return ph;
         }
 
+        private class AuthorizeAttribute : Attribute
+        {
+
+        }
     }
 }

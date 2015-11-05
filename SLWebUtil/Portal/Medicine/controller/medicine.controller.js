@@ -61,6 +61,12 @@
         {
             vm.currentMedicine.MedicineName = name;
         }
+        function ClearList()
+        {
+            vm.PatientHistories = [];
+            vm.MedicineHistories = [];
+            vm.patients = [];
+        }
         function ClearForSearch(name, value)
         {
             vm.currentPatient = {};
@@ -139,7 +145,7 @@
         }
         function CreatePatient()
         {
-            
+            ClearList();
             if (vm.currentPatient.Id == 0 || vm.currentPatient.Id == undefined || vm.currentPatient.Id == "") {
                 vm.loading = true;
                 vm.currentPatient.Id = 0;
@@ -150,8 +156,10 @@
                 MedicineService.CreatePatient(vm.currentPatient)
                     .success(function (res) {
                         vm.currentPatient = res.Data;
-                        vm.loading = false;
+                        
                         GetMedicineNames();
+                        vm.loading = false;
+                        
                     })
                     .error(function () {
                         vm.loading = true;
@@ -182,6 +190,7 @@
         }
         function GetMedicineHistoriesByPatientId(patientId, date)
         {
+            
             vm.loading = true;
             var obj = {
                 PatientId : patientId,
