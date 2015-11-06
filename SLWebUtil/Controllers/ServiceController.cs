@@ -10,12 +10,13 @@ using System.Web.Http;
 using System.Web.Mvc;
 using Services;
 using System.Dynamic;
+using SLWebUtil.Controllers.ApiAuth;
 
 namespace SLWebUtil.Controllers
 {
     public class ServiceController : ApiController
     {
-
+        [ApiAuth]
         [System.Web.Http.HttpGet]
         public async Task<ActionResult> DoAction(string service, string act, string obj)
         {

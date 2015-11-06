@@ -28,5 +28,7 @@ namespace MedicineRepository
         public virtual DbSet<Medicine> Medicines { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<PatientHistory> PatientHistories { get; set; }
+        public virtual DbSet<UserAccount> UserAccounts { get; set; }
+        public virtual DbSet<TokenHistory> TokenHistories { get; set; }
     }
 }

@@ -19,11 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicineRepository", "Medic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServices", "AuthorizationServices\AuthorizationServices.csproj", "{0BA52986-CE98-4FA1-9A10-59D7A22BCA11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryUtility", "..\CSharpDLL\RepositoryUtility\RepositoryUtility\RepositoryUtility.csproj", "{3EC3CF96-E702-4A90-89CC-B3438191B334}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\..\CSharpDLL\Utilities\Utilities.csproj", "{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\CSharpDLL\Utilities\Utilities.csproj", "{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUtility", "..\..\CSharpDLL\WebApiUtility\WebApiUtility\WebApiUtility.csproj", "{4D3204D9-5F2B-472D-910E-14C3A936F86B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUtility", "..\CSharpDLL\WebApiUtility\WebApiUtility\WebApiUtility.csproj", "{4D3204D9-5F2B-472D-910E-14C3A936F86B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryUtility", "..\..\CSharpDLL\RepositoryUtility\RepositoryUtility\RepositoryUtility.csproj", "{3EC3CF96-E702-4A90-89CC-B3438191B334}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +55,6 @@ Global
 		{0BA52986-CE98-4FA1-9A10-59D7A22BCA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BA52986-CE98-4FA1-9A10-59D7A22BCA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BA52986-CE98-4FA1-9A10-59D7A22BCA11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Release|Any CPU.Build.0 = Release|Any CPU
 		{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044B9B2B-FC2A-4312-BBEE-C938CB6E5332}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -67,6 +63,10 @@ Global
 		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D3204D9-5F2B-472D-910E-14C3A936F86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

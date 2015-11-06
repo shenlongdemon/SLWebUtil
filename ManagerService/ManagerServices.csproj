@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CSharpDLL\Utilities\Utilities.csproj">
+      <Project>{044b9b2b-fc2a-4312-bbee-c938cb6e5332}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AuthorizationServices\AuthorizationServices.csproj">
       <Project>{0ba52986-ce98-4fa1-9a10-59d7a22bca11}</Project>
       <Name>AuthorizationServices</Name>

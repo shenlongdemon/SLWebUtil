@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AuthorizationServices</RootNamespace>
     <AssemblyName>AuthorizationServices</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +43,17 @@
   <ItemGroup>
     <Compile Include="AuthorizationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TokenAuthAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CSharpDLL\RepositoryUtility\RepositoryUtility\RepositoryUtility.csproj">
+      <Project>{3ec3cf96-e702-4a90-89cc-b3438191b334}</Project>
+      <Name>RepositoryUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicineRepository\MedicineRepository.csproj">
+      <Project>{5712384a-7080-4cc1-af73-c43ec67e1520}</Project>
+      <Name>MedicineRepository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
