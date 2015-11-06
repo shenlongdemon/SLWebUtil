@@ -29,7 +29,8 @@ namespace Services
                 _ManagerService.Services = new List<object>()
                 {
                     new OrionService(),
-                    new MedicineService()
+                    new MedicineService(),
+                    new AuthorizationService()
                 };
             }
             return _ManagerService;

@@ -6,6 +6,7 @@
         .config(config)        
         .constant('Constants', 
             {
+                API_BASE : "http://localhost:1111/",
                 //MEDICINE_API: "http://192.168.1.108:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
                 MEDICINE_API: "http://localhost:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
                 //MEDICINE_API: "http://www.slwebutil.somee.com/api/service/doaction?service=medicine&act={act}&obj={obj}"                
@@ -30,7 +31,12 @@
                 templateUrl: 'Facebook/view/home.view.html',
                 controllerAs: 'vm'
             })
-            .otherwise({ redirectTo: '/landingpage' });
+            .when('/login', {
+                controller: 'LoginController',
+                templateUrl: 'login/view/login.view.html',
+                controllerAs: 'vm'
+            })
+            .otherwise({ redirectTo: '/Login' });
     }
 
 

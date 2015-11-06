@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ECF0198-323D-4164-8E3D-E2797215A272}</ProjectGuid>
+    <ProjectGuid>{0BA52986-CE98-4FA1-9A10-59D7A22BCA11}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ManagerService</RootNamespace>
-    <AssemblyName>ManagerService</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>AuthorizationServices</RootNamespace>
+    <AssemblyName>AuthorizationServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,22 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManagerService.cs" />
+    <Compile Include="AuthorizationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AuthorizationServices\AuthorizationServices.csproj">
-      <Project>{0ba52986-ce98-4fa1-9a10-59d7a22bca11}</Project>
-      <Name>AuthorizationServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MedicineServices\MedicineServices.csproj">
-      <Project>{88b8a5a9-2d0a-4593-bc92-ed82e0914993}</Project>
-      <Name>MedicineServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrionService\OrionServices.csproj">
-      <Project>{852a477d-b351-4bd2-b831-0656a8a5d579}</Project>
-      <Name>OrionServices</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
