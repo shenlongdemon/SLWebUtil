@@ -11,7 +11,7 @@ using System.Web.Mvc;
 using Services;
 using System.Dynamic;
 using SLWebUtil.Controllers.ApiAuth;
-
+using Utilities;
 namespace SLWebUtil.Controllers
 {
     public class ServiceController : ApiController
@@ -36,7 +36,7 @@ namespace SLWebUtil.Controllers
             catch (Exception ex)
             {
                 dynamic resDynamic = new ExpandoObject();
-
+                string exStr = ex.GetHierarchyString();
                 return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = ex.Message };
             }
         }

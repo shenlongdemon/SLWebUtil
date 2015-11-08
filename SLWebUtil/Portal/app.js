@@ -44,7 +44,7 @@
     function run($rootScope, $location, $cookieStore, $http,$injector) {    
         $injector.get("$http").defaults.transformRequest = function(data, headersGetter) {      
 
-            headersGetter()['Authorization'] = "aaaaaaaaaaaaaaaa";
+            headersGetter()['Authorization'] = "guest guest123@";
             if (data) { 
                 return angular.toJson(data); 
             } 

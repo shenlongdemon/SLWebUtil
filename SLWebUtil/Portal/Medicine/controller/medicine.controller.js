@@ -95,7 +95,9 @@
                 });
         }
         function GetPatientById(patientid) {
-            vm.loading = true;
+            vm.loading = true
+			vm.PatientHistories = [];
+			vm.MedicineHistories = [];
             MedicineService.GetPatientById(patientid)
                 .success(function (res) {
                     vm.currentPatient = res.Data;

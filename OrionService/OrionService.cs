@@ -45,11 +45,13 @@ namespace Services
                 {
                     if (str.IndexOf(OPEN_PORT) >=0)
                     {
-                        res.OpenPort = str.Split(";")[1];
+                        string[] data = str.Split(";");
+                        res.OpenPort = data.Skip(1).Take(data.Length - 1).ToArray();
                     }
                     else if (str.IndexOf(RESET_CPU) >= 0)
                     {
-                        res.ResetCPU = str.Split(";")[1];
+                        string[] data = str.Split(";");
+                        res.ResetCPU = data.Skip(1).Take(data.Length - 1).ToArray();
                     }
                     else if (str.IndexOf(FACTORY_RESET) >= 0)
                     {
