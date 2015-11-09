@@ -43,6 +43,7 @@ namespace Services
         {            
             Patient ins = patient.ToObject<Patient>();            
             ins.Guid = Guid.NewGuid();
+            ins.UnsignedName = ins.Name.ConvertUniCodeToASCII();
             Patient pat = await _patientRepo.InsertAsync(ins);            
             return pat;
         }
@@ -81,7 +82,10 @@ namespace Services
             IQueryable<Patient> list = _patientRepo.GetAll();
             foreach (string name in names)
             {
-                list = list.Where(p => p.Name.ToLower().Contains(name.ToLower()));                  
+                list = list.Where(p => 
+                                        p.Name.ToLower().Contains(name.ToLower())
+                                        || p.UnsignedName.ToLower().Contains(name.ToLower())
+                                        );                  
             }
             return await list.ToListAsync();
             
@@ -132,6 +136,7 @@ namespace Services
                 newph.Price = ph.Price;
                 newph.Date = ph.Date;
                 newph.PatientId = ph.PatientId;
+                newph.Description = ph.Description;
                 ph = await _patientHistoryRepo.InsertAsync(newph);
 
             }
@@ -143,6 +148,7 @@ namespace Services
                 src.Unit = ph.Unit;
                 src.Count = ph.Count;
                 src.Price = ph.Price;
+                src.Description = ph.Description;
                 ph = _patientHistoryRepo.Update(src);
                 await _patientHistoryRepo.SaveChangesAsync();
             }

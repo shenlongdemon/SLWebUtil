@@ -6,11 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="4355e98b2a5b4fde956b1e47e52dbd32" Name="Diagram1">
         <EntityTypeShape EntityType="slwebutilModel.Medicine" Width="1.5" PointX="5.375" PointY="1.375" />
-        <EntityTypeShape EntityType="slwebutilModel.Patient" Width="1.5" PointX="0.75" PointY="1" />
-        <EntityTypeShape EntityType="slwebutilModel.PatientHistory" Width="1.5" PointX="3" PointY="0.75" />
-        <AssociationConnector Association="slwebutilModel.FK__PatientHi__Patie__267ABA7A" />
         <EntityTypeShape EntityType="slwebutilModel.UserAccount" Width="1.5" PointX="5.25" PointY="3.25" />
         <EntityTypeShape EntityType="slwebutilModel.TokenHistory" Width="1.5" PointX="2.5" PointY="3.625" />
+        <EntityTypeShape EntityType="slwebutilModel.Patient" Width="1.5" PointX="0.75" PointY="7.125" />
+        <EntityTypeShape EntityType="slwebutilModel.PatientHistory" Width="1.5" PointX="3" PointY="7" />
+        <AssociationConnector Association="slwebutilModel.FK__PatientHi__Patie__267ABA7A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

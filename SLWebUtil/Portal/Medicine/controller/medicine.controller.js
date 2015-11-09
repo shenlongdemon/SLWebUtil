@@ -340,7 +340,8 @@
             var data = {
                 Id : vm.currentMedicine.Id,
                 PatientId : vm.currentMedicine.PatientId,
-                MedicineName : vm.currentMedicine.MedicineName,
+                MedicineName: vm.currentMedicine.MedicineName,
+                Description: vm.currentMedicine.Description,
                 Unit : vm.currentMedicine.Unit,
                 Count : vm.currentMedicine.Count,
                 Price : vm.currentMedicine.Price,

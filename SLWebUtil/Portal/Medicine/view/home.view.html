@@ -109,9 +109,15 @@
                 var code = e.keyCode || e.which;
                 if (code == 13) { //Enter keycode
                     SetCurrentMedicineName($(this).val());
-                    $("#txtUnit").focus();
+                    $("#txtDescription").focus();
                 }                
             }
+            if (id == "txtDescription") {
+                var code = e.keyCode || e.which;
+                if (code == 13) { //Enter keycode                    
+                    $("#txtUnit").focus();
+                }
+            } 
             if (id == "txtUnit") {
                 var code = e.keyCode || e.which;
                 if (code == 13) { //Enter keycode
@@ -251,9 +257,10 @@
                         <tr>
                             <td class="col-md-1 col-sm-1">ID</td>
                             <td class="col-md-3 col-sm-3">Tên thuốc</td>
-                            <td class="col-md-2 col-sm-2">Đ.Vị</td>
+                            <td class="col-md-2 col-sm-2">Liều lượng</td>
+                            <td class="col-md-1 col-sm-1">Đ.Vị</td>
                             <td class="col-md-1 col-sm-1">S.Lượng</td>
-                            <td class="col-md-3 col-sm-3">Đơn giá</td>
+                            <td class="col-md-2 col-sm-2">Đơn giá</td>
                             <td class="col-md-3 col-sm-3"> Thành tiền</td>
                         </tr>
                     
@@ -266,6 +273,7 @@
                                 
                             </td>
                             <td>{{mh.MedicineName}}</td>
+                            <td>{{mh.Description}}</td>
                             <td>{{mh.Unit}}</td>
                             <td>{{mh.Count.toLocaleString()}}</td>
                             <td>{{mh.Price.toLocaleString()}}</td>
@@ -278,6 +286,7 @@
                         <tr id="trEditMedicineHistory">
                             <td><label class="control-label" id="lblMHID" >{{vm.currentMedicine.Id}}</label></td>
                             <td><input id="txtMedicineName" class="form-control" ng-model="vm.currentMedicine.MedicineName" /></td>
+                            <td><input id="txtDescription" class="form-control" ng-model="vm.currentMedicine.Description" /></td>
                             <td><input id="txtUnit" class="form-control" ng-model="vm.currentMedicine.Unit" /></td>
                             <td><input id="txtCount" type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" ng-model="vm.currentMedicine.Count" /></td>
                             <td><input id="txtPrice" type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" ng-model="vm.currentMedicine.Price" /></td>

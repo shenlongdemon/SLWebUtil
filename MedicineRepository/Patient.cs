@@ -25,6 +25,7 @@ namespace MedicineRepository
         public string Name { get; set; }
         public Nullable<System.DateTime> Birth { get; set; }
         public string Phone { get; set; }
+        public string UnsignedName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PatientHistory> PatientHistories { get; set; }

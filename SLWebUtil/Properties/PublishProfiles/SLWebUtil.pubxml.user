@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:35:58</publishTime>
     </File>
     <File Include="bin/AuthorizationServices.dll">
-      <publishTime>07/11/2015 22:49:12</publishTime>
+      <publishTime>11/09/2015 21:32:01</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/28/2015 23:36:01</publishTime>
@@ -85,13 +85,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:01</publishTime>
     </File>
     <File Include="bin/ManagerService.dll">
-      <publishTime>11/08/2015 23:18:40</publishTime>
+      <publishTime>11/09/2015 21:32:01</publishTime>
     </File>
     <File Include="bin/MedicineRepository.dll">
-      <publishTime>07/11/2015 22:49:11</publishTime>
+      <publishTime>11/09/2015 21:32:01</publishTime>
     </File>
     <File Include="bin/MedicineServices.dll">
-      <publishTime>07/11/2015 23:12:09</publishTime>
+      <publishTime>11/09/2015 21:32:01</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>10/28/2015 23:36:02</publishTime>
@@ -139,31 +139,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2015 12:59:33</publishTime>
     </File>
     <File Include="bin/OrionService.dll">
-      <publishTime>11/08/2015 23:18:39</publishTime>
+      <publishTime>11/09/2015 18:59:52</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>10/28/2015 23:36:08</publishTime>
     </File>
     <File Include="bin/Portal/app.js">
-      <publishTime>07/11/2015 22:51:33</publishTime>
+      <publishTime>11/09/2015 20:59:00</publishTime>
     </File>
     <File Include="bin/Portal/Facebook/controller/facebook.controller.js">
-      <publishTime>02/11/2015 23:14:17</publishTime>
+      <publishTime>11/02/2015 23:14:17</publishTime>
     </File>
     <File Include="bin/Portal/Facebook/services/facebook.service.js">
-      <publishTime>02/11/2015 23:04:59</publishTime>
+      <publishTime>11/02/2015 23:04:59</publishTime>
     </File>
     <File Include="bin/Portal/Facebook/view/home.view.html">
-      <publishTime>04/11/2015 00:16:26</publishTime>
+      <publishTime>11/04/2015 00:16:26</publishTime>
     </File>
     <File Include="bin/Portal/index.html">
-      <publishTime>06/11/2015 21:59:58</publishTime>
+      <publishTime>11/06/2015 21:59:58</publishTime>
     </File>
     <File Include="bin/Portal/Medicine/controller/medicine.controller.js">
-      <publishTime>07/11/2015 22:16:28</publishTime>
+      <publishTime>11/09/2015 21:39:24</publishTime>
     </File>
     <File Include="bin/RepositoryUtility.dll">
-      <publishTime>03/11/2015 22:44:04</publishTime>
+      <publishTime>11/03/2015 22:44:04</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>10/28/2015 23:36:04</publishTime>
@@ -202,7 +202,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:05</publishTime>
     </File>
     <File Include="bin/SLWebUtil.dll">
-      <publishTime>11/08/2015 23:18:41</publishTime>
+      <publishTime>11/09/2015 21:32:04</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>10/28/2015 23:36:03</publishTime>
@@ -220,7 +220,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:06</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/28/2015 23:36:00</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>10/28/2015 23:36:02</publishTime>
@@ -238,7 +238,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:04</publishTime>
     </File>
     <File Include="bin/Utilities.dll">
-      <publishTime>07/11/2015 23:12:08</publishTime>
+      <publishTime>11/07/2015 23:12:08</publishTime>
     </File>
     <File Include="bin/WebApiUtility.dll">
       <publishTime>10/30/2015 01:07:23</publishTime>
@@ -277,43 +277,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2015 15:32:25</publishTime>
     </File>
     <File Include="Portal/app.js">
-      <publishTime>07/11/2015 22:51:33</publishTime>
+      <publishTime>11/09/2015 20:59:00</publishTime>
     </File>
     <File Include="Portal/Contents/Common.css">
       <publishTime>10/31/2015 14:56:36</publishTime>
     </File>
     <File Include="Portal/Contents/Images/loader.gif">
-      <publishTime>04/11/2015 22:52:17</publishTime>
+      <publishTime>11/04/2015 22:52:17</publishTime>
     </File>
     <File Include="Portal/Facebook/controller/facebook.controller.js">
-      <publishTime>02/11/2015 23:14:17</publishTime>
+      <publishTime>11/02/2015 23:14:17</publishTime>
     </File>
     <File Include="Portal/Facebook/services/facebook.service.js">
-      <publishTime>02/11/2015 23:04:59</publishTime>
+      <publishTime>11/02/2015 23:04:59</publishTime>
     </File>
     <File Include="Portal/Facebook/view/home.view.html">
-      <publishTime>04/11/2015 00:16:26</publishTime>
+      <publishTime>11/04/2015 00:16:26</publishTime>
     </File>
     <File Include="Portal/index.html">
-      <publishTime>06/11/2015 21:59:58</publishTime>
+      <publishTime>11/06/2015 21:59:58</publishTime>
     </File>
     <File Include="Portal/Login/controller/login.controller.js">
-      <publishTime>06/11/2015 21:59:58</publishTime>
+      <publishTime>11/06/2015 21:59:58</publishTime>
     </File>
     <File Include="Portal/Login/service/login.service.js">
-      <publishTime>06/11/2015 21:59:58</publishTime>
+      <publishTime>11/06/2015 21:59:58</publishTime>
     </File>
     <File Include="Portal/Login/view/login.view.html">
-      <publishTime>06/11/2015 21:59:58</publishTime>
+      <publishTime>11/06/2015 21:59:58</publishTime>
     </File>
     <File Include="Portal/Medicine/controller/medicine.controller.js">
-      <publishTime>07/11/2015 22:16:28</publishTime>
+      <publishTime>11/09/2015 21:39:24</publishTime>
     </File>
     <File Include="Portal/Medicine/services/medicine.service.js">
-      <publishTime>04/11/2015 22:41:06</publishTime>
+      <publishTime>11/04/2015 22:41:06</publishTime>
     </File>
     <File Include="Portal/Medicine/view/home.view.html">
-      <publishTime>05/11/2015 22:49:14</publishTime>
+      <publishTime>11/09/2015 21:43:43</publishTime>
     </File>
     <File Include="Portal/Scripts/ajax/ajax.js">
       <publishTime>11/04/2015 21:21:05</publishTime>
@@ -3235,391 +3235,391 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2015 19:24:59</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-hashbang-mode/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-hashbang-mode/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-hashbang-mode/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-hashbang-mode/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-hashbang-mode/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-hashbang-mode/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/addressBar.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/fakeBrowser.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-location-html5-mode/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-message-format-example/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-message-format-example/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-message-format-example/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-message-format-example/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-message-format-example/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-message-format-example/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-month-input-directive/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-month-input-directive/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-month-input-directive/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-month-input-directive/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-month-input-directive/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-month-input-directive/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ng-model-cancel-update/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ng-model-cancel-update/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ng-model-cancel-update/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ng-model-cancel-update/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ng-model-cancel-update/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ng-model-cancel-update/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngChange-directive/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngChange-directive/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngChange-directive/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngChange-directive/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngChange-directive/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngChange-directive/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngController/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngController/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngController/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngController/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngController/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngController/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngController/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngControllerAs/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngControllerAs/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngControllerAs/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngControllerAs/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngControllerAs/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngControllerAs/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngControllerAs/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive-newlines/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive-newlines/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive-newlines/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive-newlines/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive-newlines/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive-newlines/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngList-directive/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessageFormat-example/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessageFormat-example/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessageFormat-example/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessageFormat-example/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessageFormat-example/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessageFormat-example/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessageFormat-example/script.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessages-directive/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessages-directive/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessages-directive/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessages-directive/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessages-directive/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngMessages-directive/script.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModel-getter-setter/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModel-getter-setter/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModel-getter-setter/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModel-getter-setter/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModel-getter-setter/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModel-getter-setter/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/script.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-NgModelController/style.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-blur/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-blur/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-blur/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-blur/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-blur/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-blur/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-blur/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-debounce/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-debounce/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-debounce/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-debounce/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-debounce/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-debounce/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-getter-setter/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-getter-setter/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-getter-setter/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-getter-setter/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-getter-setter/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngModelOptions-directive-getter-setter/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngrepeat-select/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngrepeat-select/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngrepeat-select/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngrepeat-select/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngrepeat-select/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngrepeat-select/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngValue-directive/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngValue-directive/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngValue-directive/index-production.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngValue-directive/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngValue-directive/manifest.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngValue-directive/protractor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngView-directive/animations.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngView-directive/book.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngView-directive/chapter.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngView-directive/index-debug.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngView-directive/index-jquery.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 19:25:00</publishTime>
     </File>
     <File Include="Portal/Scripts/angular-1.4.7/docs/examples/example-ngView-directive/index-production.html">
       <publishTime>10/29/2015 19:25:01</publishTime>
@@ -9037,40 +9037,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2015 19:29:50</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/icons/error.png">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/icons/face-sad.png">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/icons/face-smile.png">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/icons/loading.gif">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/icons/question.png">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/icons/succeed.png">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/icons/warning.png">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/index.html">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/jquery.mobiDialog-1.0.css">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/jquery.mobiDialog-1.0.js">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/mobile_notification_dialog/README.md">
-      <publishTime>03/11/2015 23:48:46</publishTime>
+      <publishTime>11/03/2015 23:48:46</publishTime>
     </File>
     <File Include="Portal/Scripts/moment.js">
-      <publishTime>05/11/2015 22:32:18</publishTime>
+      <publishTime>11/05/2015 22:32:18</publishTime>
     </File>
     <File Include="Portal/Scripts/zebra_datepicker.js">
       <publishTime>10/31/2015 17:27:34</publishTime>
@@ -9157,7 +9157,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:26:26</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>06/11/2015 21:59:58</publishTime>
+      <publishTime>11/06/2015 21:59:58</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>10/28/2015 23:26:26</publishTime>
@@ -9175,7 +9175,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:26:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/11/2015 23:13:21</publishTime>
+      <publishTime>11/04/2015 23:13:21</publishTime>
     </File>
   </ItemGroup>
 </Project>

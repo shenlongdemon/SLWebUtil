@@ -21,6 +21,7 @@ namespace MedicineRepository
         public int Count { get; set; }
         public int Price { get; set; }
         public string MedicineName { get; set; }
+        public string Description { get; set; }
     
         public virtual Patient Patient { get; set; }
     }
