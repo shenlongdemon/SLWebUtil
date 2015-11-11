@@ -233,14 +233,16 @@
     <Content Include="Portal\Facebook\controller\facebook.controller.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Portal\Facebook\controller\remove-member-group.controller.js" />
     <Content Include="Portal\Facebook\services\facebook.service.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Portal\Facebook\view\remove-member-group.view.html" />
     <Content Include="Portal\Login\controller\login.controller.js" />
-    <Content Include="Portal\Login\service\login.service.js" />
+    <Content Include="Portal\Login\services\login.service.js" />
     <Content Include="Portal\Login\view\login.view.html" />
     <Content Include="Portal\Medicine\services\medicine.service.js" />
+    <Content Include="Portal\Medicine\view\report.view.html" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.min.js" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-aria.js" />
