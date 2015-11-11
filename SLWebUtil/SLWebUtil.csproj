@@ -236,6 +236,7 @@
     <Content Include="Portal\Facebook\services\facebook.service.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Portal\Facebook\view\remove-member-group.view.html" />
     <Content Include="Portal\Login\controller\login.controller.js" />
     <Content Include="Portal\Login\service\login.service.js" />
     <Content Include="Portal\Login\view\login.view.html" />

@@ -35,9 +35,8 @@ namespace SLWebUtil.Controllers
             }
             catch (Exception ex)
             {
-                dynamic resDynamic = new ExpandoObject();
                 string exStr = ex.GetHierarchyString();
-                return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = ex.Message };
+                return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = exStr };
             }
         }
     }

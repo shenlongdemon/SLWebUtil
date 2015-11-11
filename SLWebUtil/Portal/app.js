@@ -31,6 +31,11 @@
                 templateUrl: 'Facebook/view/home.view.html',
                 controllerAs: 'vm'
             })
+            .when('/Facebook/remove-member-group', {
+                controller: 'FacebookController',
+                templateUrl: 'Facebook/view/remove-member-group.view.html',
+                controllerAs: 'vm'
+            })
             .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'login/view/login.view.html',
