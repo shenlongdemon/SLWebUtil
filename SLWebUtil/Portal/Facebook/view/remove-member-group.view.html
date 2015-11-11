@@ -1,11 +1,83 @@
-﻿<script>
-    $(document).ready(function () {
+﻿<style>
+    input {
+        text-align: center;
+        font-weight: bold;
+    }
 
+    .form-group {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    td {
+        padding-left: 10px;
+        text-align: center;
+    }
+
+    .divCornor {
+        border: 2px solid #BDBDBD;
+        padding: 0px;
+    }
+
+    .buttonDelete {
+        background-color: red;
+        color: white;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            var id = this.id;
+            if (id == "btnGenerateLink") {
+                
+            }
+        });
     });
 </script>
 <section id="content">
     <div class="loading" ng-show="vm.loading"></div>
     <div class="container-fluid">
-
+        
+        <div class="col-md-4 col-sm-4 ">
+            <div class="row">
+                <label style="font-weight:bold; font-size:large; width:100%; height:20px; text-align:center">REMOVE MEMBER IN GROUP</label>
+            </div>
+            <div class="row">
+                <label style="width:100%; height:20px; text-align:center">=========================</label>
+            </div>
+            <div class="row form-group form-horizontal divCornor">
+                <label class="col-md-3 col-sm-3 control-label">Remove</label>
+                <div class="col-md-6 col-sm-6" style="padding:0px;">
+                    <input type="number" pattern="[0-9]*" inputmode="numeric"  class="form-control" ng-model="vm.maxremove">
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <label style="float:left;" class="control-label">members</label>
+                </div>
+            </div>
+            <div class="row form-group form-horizontal divCornor">
+                <label class="col-md-3 col-sm-3 control-label">Excepted list</label>
+                <div class="col-md-9 col-sm-9" style="padding:0px;">
+                    <textarea style="height:200px;" class="form-control" id="txtExceptedList" ng-model="vm.expectedlist">{{vm.expectedlist}}</textarea>
+                </div>                
+            </div>
+            <div class="row">                
+                <label style="width:100%; height:20px; text-align:center">=========================</label>
+            </div>
+            <div class="row">
+                <button id="btnGenerateLink" ng-click="vm.GenerateLink()">Generate Link</button>
+            </div>
+            <div class="row">
+                <label style="width:100%; height:20px; text-align:center">=========================</label>
+            </div>
+            <div class="row">
+                <label style="width:100%; height:20px; text-align:center"></label>
+            </div>
+            <div class="row" ng-hide="vm.isloading" style="height:40px; ">
+                <a  style="font-weight:bold;" href="{{vm.link}}">REMOVE {{vm.maxremove}} MEMBERS ({{vm.index}})</a>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4"> </div>
+        <div class="col-md-4 col-sm-4"> </div>        
     </div>
 </section>

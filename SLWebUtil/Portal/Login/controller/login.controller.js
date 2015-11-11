@@ -8,20 +8,17 @@
         var vm = this;
         vm.loading = false;
         vm.loadingback = false;
-        vm.login = login;
+        vm.Login = Login;
 
         vm.username = "";
         vm.password = "";
-        function login()
+        function Login()
         {
             var info = {username :  vm.username,password:password };
             LoginService.Login(info)
                 .success(function (res, status, headers, config, statusText) {
                     vm.loading = false;
-                    if (status == 200)
-                    {
-
-                    }
+                    
                     
                 })
                 .error(function () {

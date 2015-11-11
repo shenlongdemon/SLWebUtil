@@ -14,10 +14,10 @@
         )
         .run(run);
 
-    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
+    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', '$compileProvider'];
      
-    function config($routeProvider, $locationProvider, $httpProvider) {
-
+    function config($routeProvider, $locationProvider, $httpProvider, $compileProvider) {
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
         $routeProvider            
@@ -26,17 +26,22 @@
                 templateUrl: 'Medicine/view/home.view.html',
                 controllerAs: 'vm'
             })
+            .when('/Medicine/report', {
+                controller: 'MedicineController',
+                templateUrl: 'Medicine/view/report.view.html',
+                controllerAs: 'vm'
+            })
             .when('/Facebook', {
                 controller: 'FacebookController',
                 templateUrl: 'Facebook/view/home.view.html',
                 controllerAs: 'vm'
             })
             .when('/Facebook/remove-member-group', {
-                controller: 'FacebookController',
+                controller: 'RemoveMemberGroupFacebookController',
                 templateUrl: 'Facebook/view/remove-member-group.view.html',
                 controllerAs: 'vm'
             })
-            .when('/login', {
+            .when('/Login', {
                 controller: 'LoginController',
                 templateUrl: 'login/view/login.view.html',
                 controllerAs: 'vm'
