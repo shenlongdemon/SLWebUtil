@@ -14,9 +14,9 @@
         )
         .run(run);
 
-    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', '$compileProvider'];
+    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', '$provide', '$compileProvider'];
      
-    function config($routeProvider, $locationProvider, $httpProvider, $compileProvider) {
+    function config($routeProvider, $locationProvider, $httpProvider, $provide, $compileProvider) {
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -47,18 +47,81 @@
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/Login' });
+
+
+        $provide.factory('httpInterceptor', function ($q, $rootScope) {
+            return {
+                'request': function (config) {
+                    // intercept and change config: e.g. change the URL
+                    // config.url += '?nocache=' + (new Date()).getTime();
+                    // broadcasting 'httpRequest' event
+                    $rootScope.$broadcast('httpRequest', config);
+
+
+                    if (config.url.indexOf('api/service/doaction')) {
+                        var autho = "guest 00000000-0000-0000-0000-000000000000";
+                        try {
+                            var userstr = window.localStorage.getItem('user');
+                            if (userstr != null && userstr != undefined) {
+                                var user = jQuery.parseJSON(userstr);
+                                if (user != null && user != undefined) {
+                                    autho = user.username + " " + user.token;
+                                }
+                            }
+                        }
+                        catch (ex) { }
+                        config.headers.Authorization = autho;
+                    }
+                    return config || $q.when(config);
+                },
+                'response': function (response) {
+                    // we can intercept and change response here...
+                    // broadcasting 'httpResponse' event
+                    $rootScope.$broadcast('httpResponse', response);
+                    if (response.status == 401)
+                    {
+                        window.location.replace('/Login');
+                    }
+                    return response || $q.when(response);
+                },
+                'requestError': function (rejection) {
+                    // broadcasting 'httpRequestError' event
+                    $rootScope.$broadcast('httpRequestError', rejection);
+                    return $q.reject(rejection);
+                },
+                'responseError': function (rejection) {
+                    // broadcasting 'httpResponseError' event
+                    $rootScope.$broadcast('httpResponseError', rejection);
+                    if (rejection.status == 401) {
+                        window.location.replace('/Portal/#//Login');
+                    }
+                    return $q.reject(rejection);
+                }
+            };
+        });
+        $httpProvider.interceptors.push('httpInterceptor');
     }
 
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', '$injector'];
     function run($rootScope, $location, $cookieStore, $http,$injector) {    
-        $injector.get("$http").defaults.transformRequest = function(data, headersGetter) {      
-
-            headersGetter()['Authorization'] = "guest guest123@";
-            if (data) { 
-                return angular.toJson(data); 
-            } 
-        };   
+        //$injector.get("$http").defaults.transformRequest = function(data, headersGetter) {      
+        //    var autho = "guest guest123@";
+        //    try {
+        //        var userstr = window.localStorage.getItem('user');
+        //        if (userstr != null && userstr != undefined) {
+        //            var user = jQuery.parseJSON(userstr);
+        //            if (user != null && user != undefined) {
+        //                autho = user.username + " " + user.token;
+        //            }
+        //        }
+        //    }
+        //    catch (ex) { }
+        //    headersGetter()['Authorization'] = autho;
+        //    if (data) { 
+        //        return angular.toJson(data); 
+        //    } 
+        //};   
     }
 
 })();

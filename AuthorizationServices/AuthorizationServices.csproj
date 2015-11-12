@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,10 @@
     <ProjectReference Include="..\..\..\CSharpDLL\RepositoryUtility\RepositoryUtility\RepositoryUtility.csproj">
       <Project>{3ec3cf96-e702-4a90-89cc-b3438191b334}</Project>
       <Name>RepositoryUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CSharpDLL\Utilities\Utilities.csproj">
+      <Project>{044b9b2b-fc2a-4312-bbee-c938cb6e5332}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\MedicineRepository\MedicineRepository.csproj">
       <Project>{5712384a-7080-4cc1-af73-c43ec67e1520}</Project>

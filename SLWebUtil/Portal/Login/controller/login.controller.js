@@ -14,12 +14,13 @@
         vm.password = "";
         function Login()
         {
-            var info = {username :  vm.username,password:password };
+            vm.loading = true;
+            var passhash = CryptoJS.MD5(vm.password).toString();
+            var info = {username :  vm.username,password:passhash };
             LoginService.Login(info)
                 .success(function (res, status, headers, config, statusText) {
-                    vm.loading = false;
-                    
-                    
+                    window.localStorage.setItem('user', JSON.stringify(res.Data));
+                    vm.loading = false;                    
                 })
                 .error(function () {
                     vm.loading = false;

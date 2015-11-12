@@ -8,6 +8,8 @@
     CompanyService.$inject = ['$http','Constants'];
     function CompanyService($http, Constants) {
         var service = {};
+        var API_BASE = Constants.API_BASE;
+        var MEDICINE_API = API_BASE + "api/service/doaction?service=medicine&act={act}&obj={obj}";
         service.GetPatientById = GetPatientById;
         service.GetPatientsById = GetPatientsById;
         service.CreatePatient = CreatePatient;
@@ -23,57 +25,57 @@
 
         
         function GetMedicineNames() {
-            var api = Constants.MEDICINE_API.replace("{act}", "GetMedicineNames").replace("{obj}", 0);
+            var api = MEDICINE_API.replace("{act}", "GetMedicineNames").replace("{obj}", 0);
             return $http.get(api);
         }
 
         function GetPatientById(patientid) {
-            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientById").replace("{obj}", patientid);
+            var api = MEDICINE_API.replace("{act}", "GetPatientById").replace("{obj}", patientid);
             return $http.get(api);
         }
         function GetPatientsById(patientid) {
-            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientsById").replace("{obj}", patientid);
+            var api = MEDICINE_API.replace("{act}", "GetPatientsById").replace("{obj}", patientid);
             return $http.get(api);
         }
         function CreatePatient(patient) {
             var data = JSON.stringify(patient);
-            var api = Constants.MEDICINE_API.replace("{act}", "CreatePatient").replace("{obj}", data);
+            var api = MEDICINE_API.replace("{act}", "CreatePatient").replace("{obj}", data);
             return $http.get(api);
         }
         function GetMedicineHistoriesByPatientId(patient_date) {
             var data = JSON.stringify(patient_date);
-            var api = Constants.MEDICINE_API.replace("{act}", "GetMedicineHistoriesByPatientId").replace("{obj}", data);
+            var api = MEDICINE_API.replace("{act}", "GetMedicineHistoriesByPatientId").replace("{obj}", data);
             return $http.get(api);
         }
         function GetPatientHistoriesByPatientId(patientid)
         {            
-            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientHistoriesByPatientId").replace("{obj}", patientid);
+            var api = MEDICINE_API.replace("{act}", "GetPatientHistoriesByPatientId").replace("{obj}", patientid);
             return $http.get(api);
         }
         function GetPatientsByName(patientName)
         {
-            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientsByName").replace("{obj}", patientName);
+            var api = MEDICINE_API.replace("{act}", "GetPatientsByName").replace("{obj}", patientName);
             return $http.get(api);
         }
         function UpdatePatientHistory(patienthistory)
         {
         var data = JSON.stringify(patienthistory);
-            var api = Constants.MEDICINE_API.replace("{act}", "UpdatePatientHistory").replace("{obj}", data);
+            var api = MEDICINE_API.replace("{act}", "UpdatePatientHistory").replace("{obj}", data);
             return $http.get(api);
         }
         function DeleteMedicineHistory(id)
         {
-            var api = Constants.MEDICINE_API.replace("{act}", "DeleteMedicineHistory").replace("{obj}", id);
+            var api = MEDICINE_API.replace("{act}", "DeleteMedicineHistory").replace("{obj}", id);
             return $http.get(api);
         }
         function DeletePatient(id)
         {
-            var api = Constants.MEDICINE_API.replace("{act}", "DeletePatient").replace("{obj}", id);
+            var api = MEDICINE_API.replace("{act}", "DeletePatient").replace("{obj}", id);
             return $http.get(api);
         }
         function GetPatientsByPhone(phone)
         {
-            var api = Constants.MEDICINE_API.replace("{act}", "GetPatientsByPhone").replace("{obj}", phone);
+            var api = MEDICINE_API.replace("{act}", "GetPatientsByPhone").replace("{obj}", phone);
             return $http.get(api);
         }
     }

@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using Services;
+using System.Dynamic;
+
 namespace SLWebUtil.Controllers.ApiAuth
 {
     public class ApiAuthAttribute : System.Web.Http.Filters.ActionFilterAttribute
@@ -46,7 +48,9 @@ namespace SLWebUtil.Controllers.ApiAuth
                 }                
             }
             catch (Exception ex) { }
-            var tokenAuth = new { UserName = username, Token = token };
+            dynamic tokenAuth = new ExpandoObject();
+            tokenAuth.username = username;
+            tokenAuth.token = token;
             resMsg = ManagerService.Instance().IsAuthorized(service, act, tokenAuth);
             return resMsg;
         }

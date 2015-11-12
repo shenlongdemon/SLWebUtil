@@ -9,7 +9,7 @@
     function LoginService($http, Constants) {
         var service = {};
         var API_BASE = Constants.API_BASE;
-        var LOGIN_API = API_BASE + "/api/service/doaction?service=authorization&act={act}&obj={obj}";
+        var LOGIN_API = API_BASE + "api/service/doaction?service=authorization&act={act}&obj={obj}";
         service.Login = Login
         return service;        
         function Login(logininfo) {
