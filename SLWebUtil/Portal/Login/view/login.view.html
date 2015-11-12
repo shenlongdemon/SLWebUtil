@@ -17,9 +17,9 @@
     .divCornor {
         
         position: fixed;
-          top: 50%;
+          top: 30%;
           left: 50%;    
-          width:100%;
+          width:100%;          
   /* bring your own prefixes */
   transform: translate(-50%, -50%);      
     }
@@ -34,23 +34,25 @@
     <div class="container-fluid divCornor">
         <div class="col-md-4 col-sm-4"> </div>
         <div class="col-md-4 col-sm-4 ">
-            <div class="row form-group form-horizontal">
-                <label class="col-md-3 col-sm-3 control-label">User name</label>
-                <div class="col-md-6 col-sm-6" style="padding:0px;">
-                    <input class="form-control" ng-model="vm.username" />
+            <div style="border: 2px solid #BDBDBD;">
+                <div class="row form-group form-horizontal">
+                    <label class="col-md-4 col-sm-4 control-label">User name</label>
+                    <div class="col-md-7 col-sm-7" style="padding:0px;">
+                        <input class="form-control" ng-model="vm.username"  />
+                    </div>
                 </div>
-            </div>
-            <div class="row form-group form-horizontal">
-                <label class="col-md-3 col-sm-3 control-label">Password</label>
-                <div class="col-md-6 col-sm-6" style="padding:0px;">
-                    <input type="password" class="form-control" ng-model="vm.password" />
+                <div class="row form-group form-horizontal">
+                    <label class="col-md-4 col-sm-4 control-label">Password</label>
+                    <div class="col-md-7 col-sm-7" style="padding:0px;">
+                        <input type="password" class="form-control" ng-model="vm.password" />
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <p style="width:100%;"></p>
-            </div>
-            <div class="row">
-                <button id="btnLogin" ng-click="vm.Login()">Login</button>
+                <div class="row">
+                    <p style="width:100%;"></p>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" id="btnLogin" ng-click="vm.Login()">Login</button>
+                </div>
             </div>
         </div>        
         <div class="col-md-4 col-sm-4"> </div>

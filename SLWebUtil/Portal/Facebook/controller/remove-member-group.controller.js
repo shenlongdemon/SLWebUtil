@@ -78,7 +78,7 @@
         var MAX_REMOVE = 1000;
         var oldmembers = [];
         var newmembers = [];
-        var COUNT = 0;
+        var COUNT = 1;
         function genVariable()
         {
             var res = "";
@@ -89,7 +89,7 @@
                   + " var MAX_REMOVE = " + vm.maxremove + ";"
                   + " var oldmembers = [];"
                   + " var newmembers = [];"
-                  + " var COUNT = 0;";
+                  + " var COUNT = " + COUNT + ";";
             return res;
         }
         function getExpectedList()
@@ -98,7 +98,7 @@
             {
                 return "";
             }
-            var list = vm.expectedlist.replace(" ", "").split(",");
+            var list = vm.expectedlist.replace(' ', '').split("\r\n");
             var res = "'" + list.join("','") + "'";
             return res;
         }
@@ -127,7 +127,7 @@
 
             
         function runRemoveMembers() {
-            console.debug("runRemoveMembers");
+            console.debug("Run Remove Members !!!");
             clickOnSeeMore();
             var timer = setInterval(function () {
                 
@@ -145,9 +145,9 @@
                         }
                     }
                 }
-                oldmembers = oldmembers.concat(newmembers);
-                console.debug("newmembers " + newmembers.length);
+                oldmembers = oldmembers.concat(newmembers);                
                 if (newmembers.length < 0 || MAX_REMOVE < 0) {
+                    alert("Done !!!")
                     return 1;
                 }
                 else {
@@ -215,7 +215,7 @@
             var btnCancelPath = '//form[(contains(@action,"groups/members/remove")) and (contains(@action,"&uid=' + uid + '"))]//a[@title="Close"]';
             findFirstControl(btnCancelPath,
              function (btnCancel) {
-                 console.debug("Remove " + uid + "    " + COUNT);
+                 console.debug(COUNT + " - " + "Remove " + uid);
                  btnCancel.click();
                  callbackwhendone();
              });
