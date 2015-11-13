@@ -20,7 +20,12 @@
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        $routeProvider            
+        $routeProvider
+            .when('/', {
+                controller: 'DashboardController',
+                templateUrl: 'Dashboard/view/home.view.html',
+                controllerAs: 'vm'
+            })
             .when('/Medicine', {
                 controller: 'MedicineController',
                 templateUrl: 'Medicine/view/home.view.html',

@@ -1,0 +1,57 @@
+﻿<style>
+    input {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    td {
+        padding-left: 10px;
+        text-align: center;
+    }
+
+    .divCornor {
+        
+        position: fixed;
+          top: 30%;
+          left: 50%;    
+          width:100%;          
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);      
+    }
+
+    .buttonDelete {
+        background-color: red;
+        color: white;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $(".intro").hide();
+        $("button").click(function () {
+            var id = this.id;
+            if (id == "btnMyProfile") {
+                $(".intro").hide();
+                $("#divFinal").show();
+            }
+        });        
+    });
+</script>
+<section id="content">
+    <div class="loading" ng-show="vm.loading"></div>
+    <div class="container-fluid divCornor">
+        <div class="col-md-4 col-sm-4">
+            <button id="btnMyProfile" class="btn btn-primary">My profile</button> 
+            <button id="btnChangePassword" class="btn btn-primary">Change password</button> 
+            <button id="btnMyModules" class="btn btn-primary">My modules</button> 
+        </div>
+        <div class="col-md-8 col-sm-8 ">
+        </div>        
+        
+    </div>
+</section>
