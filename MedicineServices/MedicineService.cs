@@ -98,7 +98,7 @@ namespace Services
         }
         public async Task<dynamic> GetMedicineNames(object data)
         {
-            List<string> list = await _patientHistoryRepo.GetAll().Select(p=>p.MedicineName).ToListAsync();
+            List<string> list = await _patientHistoryRepo.GetAll().Select(p=>p.MedicineName).Distinct().ToListAsync();
             return list;
         }
         

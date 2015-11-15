@@ -53,5 +53,24 @@ namespace Services
                 return null;
             });
         }
+        public async Task<dynamic> ChangePassword(object data) // username, password and newpassword(MD5-ed)
+        {
+            return await Task.Run(() =>
+            {
+                dynamic inData = data.ToDynamicObject();
+                string username = inData.username;
+                string password = inData.password;
+                string newpassword = inData.newpassword;
+                var user = _userAccountRepo.First(p => p.UserName.Equals(username) && p.Password.Equals(password));
+                if (user != null)
+                {
+                    user.Password = newpassword;
+                    _userAccountRepo.SaveChanges();
+                    return 1;
+                }
+
+                return 2;
+            });
+        }
     }
 }

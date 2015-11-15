@@ -1,5 +1,5 @@
 ﻿<section id="content">
-    <div class="container-fluid divCornor">
+    <div class="container-fluid">
         <div class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
@@ -9,9 +9,27 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
+                <div class="navbar-collapse collapse" ng-init="user = $root.getUser(); isLogin = $root.isLogin()">
+                    <ul class="nav navbar-nav" style="width:100%;">
+                        <li ng-hide="isLogin" style="float:right;"><a href="#/Login">Login</a></li>
+                        <li ng-show="isLogin" style="float:right;" >
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                {{user.username}} <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/UserAccount">Profile</a></li>
+                                <li ng-click="$root.logout()"><a href="#/Login">Logout</a></li>                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--<li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
@@ -26,14 +44,8 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                
+
                             </ul>
                         </li>
                         <li><a>BBBBB</a></li>
-                        <li><a>CCCCC</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                        <li><a>CCCCC</a></li>-->

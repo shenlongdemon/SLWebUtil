@@ -7,9 +7,7 @@
         .constant('Constants', 
             {
                 API_BASE : "http://localhost:1111/",
-                //MEDICINE_API: "http://192.168.1.108:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
-                MEDICINE_API: "http://localhost:1111/api/service/doaction?service=medicine&act={act}&obj={obj}"
-                //MEDICINE_API: "http://www.slwebutil.somee.com/api/service/doaction?service=medicine&act={act}&obj={obj}"                
+                //API_BASE : "http://www.slwebutil.somee.com/"             
             }
         )
         .run(run);
@@ -49,6 +47,16 @@
             .when('/Login', {
                 controller: 'LoginController',
                 templateUrl: 'login/view/login.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/Dashboard', {
+                controller: 'DashboardController',
+                templateUrl: 'Dashboard/view/home.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/UserAccount', {
+                controller: 'UserAccountController',
+                templateUrl: 'UserAccount/view/my-profile.view.html',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/Login' });
@@ -98,7 +106,7 @@
                     // broadcasting 'httpResponseError' event
                     $rootScope.$broadcast('httpResponseError', rejection);
                     if (rejection.status == 401) {
-                        window.location.replace('/Portal/#//Login');
+                        window.location.replace('#/Login');
                     }
                     return $q.reject(rejection);
                 }
@@ -109,24 +117,37 @@
 
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', '$injector'];
-    function run($rootScope, $location, $cookieStore, $http,$injector) {    
-        //$injector.get("$http").defaults.transformRequest = function(data, headersGetter) {      
-        //    var autho = "guest guest123@";
-        //    try {
-        //        var userstr = window.localStorage.getItem('user');
-        //        if (userstr != null && userstr != undefined) {
-        //            var user = jQuery.parseJSON(userstr);
-        //            if (user != null && user != undefined) {
-        //                autho = user.username + " " + user.token;
-        //            }
-        //        }
-        //    }
-        //    catch (ex) { }
-        //    headersGetter()['Authorization'] = autho;
-        //    if (data) { 
-        //        return angular.toJson(data); 
-        //    } 
-        //};   
+    var unrestrictedPages = ['/Login', '/'
+                                , '/Facebook', '/Facebook/remove-member-group'
+                                ];
+    function run($rootScope, $location, $cookieStore, $http, $injector) {
+        $rootScope.version = "1.0.0";
+        $rootScope.isLogin = function () {
+            var user = $rootScope.getUser();
+            if (user != null && user != undefined) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+        $rootScope.getUser = function () {
+            var userstr = window.localStorage.getItem('user');
+            var user = jQuery.parseJSON(userstr);
+            return user;            
+        }
+        $rootScope.logout = function () {
+            window.localStorage.removeItem('user');
+        }
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            var user = $rootScope.getUser();
+            var curentLoc = $location.path();
+            var restrictedPage = $.inArray(curentLoc, unrestrictedPages) === -1;
+            if (restrictedPage && user == null) {                
+                $location.path('/Login').search('return=' + curentLoc);
+            }
+        });
     }
 
 })();

@@ -1,41 +1,10 @@
-﻿<style>
-    input {
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .form-group {
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-
-    td {
-        padding-left: 10px;
-        text-align: center;
-    }
-
-    .divCornor {
-        
-        position: fixed;
-          top: 30%;
-          left: 50%;    
-          width:100%;          
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);      
-    }
-
-    .buttonDelete {
-        background-color: red;
-        color: white;
-    }
-</style>
+﻿
+<header ng-include="'./SharedViews/_top.menu.html'"></header>
 <section id="content">
     <div class="loading" ng-show="vm.loading"></div>
     <div class="container-fluid divCornor">
         <div class="col-md-4 col-sm-4"> </div>
         <div class="col-md-4 col-sm-4 ">
-            
-           
         </div>        
         <div class="col-md-4 col-sm-4"> </div>
     </div>

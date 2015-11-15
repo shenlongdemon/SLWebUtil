@@ -230,13 +230,12 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Portal\Contents\Common.css" />
     <Content Include="Portal\Contents\Images\loader.gif" />
-    <Content Include="Portal\Facebook\controller\facebook.controller.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Portal\Dashboard\controller\dashboard.controller.js" />
+    <Content Include="Portal\Dashboard\services\dashboard.service.js" />
+    <Content Include="Portal\Dashboard\view\home.view.html" />
+    <Content Include="Portal\Facebook\controller\facebook.controller.js" />
     <Content Include="Portal\Facebook\controller\remove-member-group.controller.js" />
-    <Content Include="Portal\Facebook\services\facebook.service.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Portal\Facebook\services\facebook.service.js" />
     <Content Include="Portal\Facebook\view\remove-member-group.view.html" />
     <Content Include="Portal\Login\controller\login.controller.js" />
     <Content Include="Portal\Login\services\login.service.js" />
@@ -2891,12 +2890,8 @@
     <Content Include="Portal\Scripts\jquery-ui-1.11.4.custom\jquery-ui.structure.min.css" />
     <Content Include="Portal\Scripts\jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
     <Content Include="Portal\Scripts\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
-    <Content Include="Portal\app.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Portal\Medicine\controller\medicine.controller.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Portal\app.js" />
+    <Content Include="Portal\Medicine\controller\medicine.controller.js" />
     <Content Include="Portal\Medicine\view\home.view.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -2930,6 +2925,10 @@
     <Content Include="Portal\Scripts\Zebra_Datepicker\js\core.js" />
     <Content Include="Portal\Scripts\Zebra_Datepicker\js\zebra_datepicker.js" />
     <Content Include="Portal\Scripts\Zebra_Datepicker\js\zebra_datepicker.src.js" />
+    <Content Include="Portal\SharedViews\_top.menu.html" />
+    <Content Include="Portal\UserAccount\controller\user.account.controller.js" />
+    <Content Include="Portal\UserAccount\services\user.account.service.js" />
+    <Content Include="Portal\UserAccount\view\my-profile.view.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -3175,9 +3174,7 @@
     <Content Include="Portal\Scripts\angular-1.4.7\docs\js\search-worker.min.js.map" />
     <Content Include="Portal\Scripts\angular-1.4.7\errors.json" />
     <Content Include="Portal\Scripts\angular-1.4.7\version.json" />
-    <Content Include="Portal\index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Portal\index.html" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\.editorconfig" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\.travis.yml" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\bower.json" />
@@ -3300,9 +3297,7 @@
     <Content Include="Portal\Scripts\bootstrap-3.3.5\test-infra\s3_cache.py" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\test-infra\uncached-npm-install.sh" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\_config.yml" />
-    <Content Include="Portal\Facebook\view\home.view.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Portal\Facebook\view\home.view.html" />
     <Content Include="Portal\Scripts\mobile_notification_dialog\README.md" />
     <None Include="Properties\PublishProfiles\SLWebUtil.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

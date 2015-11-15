@@ -4,29 +4,8 @@
         font-weight: bold;
     }
 
-    .form-group {
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-
-    td {
-        padding-left: 10px;
-        text-align: center;
-    }
-
-    .divCornor {
-        
-        position: fixed;
-          top: 30%;
-          left: 50%;    
-          width:100%;          
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);      
-    }
-
-    .buttonDelete {
-        background-color: red;
-        color: white;
+    .btnProfile {
+        width:50%;
     }
 </style>
 
@@ -37,20 +16,71 @@
             var id = this.id;
             if (id == "btnMyProfile") {
                 $(".intro").hide();
-                $("#divFinal").show();
+            }
+            else if (id == "btnChangePassword") {
+                $(".intro").hide();
+                $("#divChangePassword").show();
+            }
+            else if (id == "btnMyModules") {
+                $(".intro").hide();
             }
         });        
     });
 </script>
+<header ng-include="'./SharedViews/_top.menu.html'"></header>
 <section id="content">
     <div class="loading" ng-show="vm.loading"></div>
-    <div class="container-fluid divCornor">
+    <div class="container-fluid body-content">
         <div class="col-md-4 col-sm-4">
-            <button id="btnMyProfile" class="btn btn-primary">My profile</button> 
-            <button id="btnChangePassword" class="btn btn-primary">Change password</button> 
-            <button id="btnMyModules" class="btn btn-primary">My modules</button> 
+            <div class="row">
+                <button id="btnMyProfile" class="btn btn-primary btnProfile">My profile</button> 
+            </div>
+            <div class="row">
+                <button id="btnChangePassword" class="btn btn-primary btnProfile">Change password</button> 
+            </div>
+            <div class="row">
+                <button id="btnMyModules" class="btn btn-primary btnProfile">My modules</button> 
+            </div>
         </div>
         <div class="col-md-8 col-sm-8 ">
+            <div class="intro col-md-7 col-sm-7" id="divChangePassword">
+                <div class="row">
+                    <label style="font-weight:bold; font-size:large; width:100%; height:20px; text-align:center">CHANGE PASSWORD</label>
+                </div>
+                <div class="row">
+                    <label style="width:100%; height:20px; text-align:center">=========================</label>
+                </div>
+                <div style="border: 2px solid #BDBDBD;">
+                    <div class="row form-group form-horizontal">
+                        <label class="col-md-4 col-sm-4 control-label">Old password</label>
+                        <div class="col-md-7 col-sm-7" style="padding:0px;">
+                            <input class="form-control" ng-model="vm.password" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p style="width:100%;"></p>
+                    </div>
+                    <div class="row form-group form-horizontal">
+                        <label class="col-md-4 col-sm-4 control-label">New password</label>
+                        <div class="col-md-7 col-sm-7" style="padding:0px;">
+                            <input class="form-control" ng-model="vm.newpassword" />
+                        </div>
+                    </div>
+                    <div class="row form-group form-horizontal">
+                        <label class="col-md-4 col-sm-4 control-label">Confirm password</label>
+                        <div class="col-md-7 col-sm-7" style="padding:0px;">
+                            <input class="form-control" ng-model="vm.confirmpassword" />
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <p style="width:100%;"></p>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary" id="btnChangePassword" ng-click="vm.ChangePassword()">Change</button>
+                    </div>
+                </div>
+            </div>
         </div>        
         
     </div>

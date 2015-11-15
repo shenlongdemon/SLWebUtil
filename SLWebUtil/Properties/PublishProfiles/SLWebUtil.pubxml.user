@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:35:58</publishTime>
     </File>
     <File Include="bin/AuthorizationServices.dll">
-      <publishTime>11/09/2015 21:32:01</publishTime>
+      <publishTime>11/15/2015 22:05:59</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/28/2015 23:36:01</publishTime>
@@ -85,13 +85,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:01</publishTime>
     </File>
     <File Include="bin/ManagerService.dll">
-      <publishTime>11/09/2015 21:32:01</publishTime>
+      <publishTime>11/15/2015 22:05:59</publishTime>
     </File>
     <File Include="bin/MedicineRepository.dll">
       <publishTime>11/09/2015 21:32:01</publishTime>
     </File>
     <File Include="bin/MedicineServices.dll">
-      <publishTime>11/09/2015 21:32:01</publishTime>
+      <publishTime>11/15/2015 22:05:59</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>10/28/2015 23:36:02</publishTime>
@@ -139,7 +139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2015 12:59:33</publishTime>
     </File>
     <File Include="bin/OrionService.dll">
-      <publishTime>11/09/2015 18:59:52</publishTime>
+      <publishTime>11/15/2015 22:05:59</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>10/28/2015 23:36:08</publishTime>
@@ -202,7 +202,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:05</publishTime>
     </File>
     <File Include="bin/SLWebUtil.dll">
-      <publishTime>11/09/2015 21:32:04</publishTime>
+      <publishTime>11/15/2015 22:06:01</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>10/28/2015 23:36:03</publishTime>
@@ -238,7 +238,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:04</publishTime>
     </File>
     <File Include="bin/Utilities.dll">
-      <publishTime>11/07/2015 23:12:08</publishTime>
+      <publishTime>11/15/2015 22:05:59</publishTime>
     </File>
     <File Include="bin/WebApiUtility.dll">
       <publishTime>10/30/2015 01:07:23</publishTime>
@@ -277,7 +277,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2015 15:32:25</publishTime>
     </File>
     <File Include="Portal/app.js">
-      <publishTime>11/09/2015 20:59:00</publishTime>
+      <publishTime>11/15/2015 22:04:33</publishTime>
     </File>
     <File Include="Portal/Contents/Common.css">
       <publishTime>10/31/2015 14:56:36</publishTime>
@@ -285,35 +285,56 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Portal/Contents/Images/loader.gif">
       <publishTime>11/04/2015 22:52:17</publishTime>
     </File>
+    <File Include="Portal/Dashboard/controller/dashboard.controller.js">
+      <publishTime>11/13/2015 19:05:38</publishTime>
+    </File>
+    <File Include="Portal/Dashboard/services/dashboard.service.js">
+      <publishTime>11/13/2015 19:05:38</publishTime>
+    </File>
+    <File Include="Portal/Dashboard/view/home.view.html">
+      <publishTime>11/14/2015 22:55:50</publishTime>
+    </File>
     <File Include="Portal/Facebook/controller/facebook.controller.js">
-      <publishTime>11/02/2015 23:14:17</publishTime>
+      <publishTime>11/15/2015 21:55:34</publishTime>
+    </File>
+    <File Include="Portal/Facebook/controller/remove-member-group.controller.js">
+      <publishTime>11/12/2015 22:35:34</publishTime>
     </File>
     <File Include="Portal/Facebook/services/facebook.service.js">
       <publishTime>11/02/2015 23:04:59</publishTime>
     </File>
     <File Include="Portal/Facebook/view/home.view.html">
-      <publishTime>11/04/2015 00:16:26</publishTime>
+      <publishTime>11/13/2015 22:22:00</publishTime>
+    </File>
+    <File Include="Portal/Facebook/view/remove-member-group.view.html">
+      <publishTime>11/15/2015 00:01:35</publishTime>
     </File>
     <File Include="Portal/index.html">
-      <publishTime>11/06/2015 21:59:58</publishTime>
+      <publishTime>11/13/2015 22:47:55</publishTime>
     </File>
     <File Include="Portal/Login/controller/login.controller.js">
-      <publishTime>11/06/2015 21:59:58</publishTime>
+      <publishTime>11/14/2015 23:36:29</publishTime>
     </File>
     <File Include="Portal/Login/service/login.service.js">
       <publishTime>11/06/2015 21:59:58</publishTime>
     </File>
+    <File Include="Portal/Login/services/login.service.js">
+      <publishTime>11/12/2015 23:15:50</publishTime>
+    </File>
     <File Include="Portal/Login/view/login.view.html">
-      <publishTime>11/06/2015 21:59:58</publishTime>
+      <publishTime>11/15/2015 21:58:22</publishTime>
     </File>
     <File Include="Portal/Medicine/controller/medicine.controller.js">
       <publishTime>11/09/2015 21:39:24</publishTime>
     </File>
     <File Include="Portal/Medicine/services/medicine.service.js">
-      <publishTime>11/04/2015 22:41:06</publishTime>
+      <publishTime>11/12/2015 23:45:27</publishTime>
     </File>
     <File Include="Portal/Medicine/view/home.view.html">
-      <publishTime>11/09/2015 21:43:43</publishTime>
+      <publishTime>11/14/2015 23:25:59</publishTime>
+    </File>
+    <File Include="Portal/Medicine/view/report.view.html">
+      <publishTime>11/11/2015 23:20:23</publishTime>
     </File>
     <File Include="Portal/Scripts/ajax/ajax.js">
       <publishTime>11/04/2015 21:21:05</publishTime>
@@ -8985,6 +9006,270 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Portal/Scripts/bootstrap-3.3.5/_config.yml">
       <publishTime>10/29/2015 22:17:07</publishTime>
     </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/aes-min.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/aes.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/cipher-core-min.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/cipher-core.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/core-min.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/core.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/enc-base64-min.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/enc-base64.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/enc-utf16-min.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/enc-utf16.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/evpkdf-min.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/evpkdf.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/format-hex-min.js">
+      <publishTime>11/12/2015 23:00:44</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/format-hex.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/hmac-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/hmac.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/lib-typedarrays-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/lib-typedarrays.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/md5-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/md5.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-cfb-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-cfb.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ctr-gladman-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ctr-gladman.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ctr-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ctr.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ecb-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ecb.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ofb-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/mode-ofb.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-ansix923-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-ansix923.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-iso10126-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-iso10126.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-iso97971-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-iso97971.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-nopadding-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-nopadding.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-zeropadding-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pad-zeropadding.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pbkdf2-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/pbkdf2.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/rabbit-legacy-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/rabbit-legacy.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/rabbit-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/rabbit.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/rc4-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/rc4.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/ripemd160-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/ripemd160.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha1-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha1.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha224-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha224.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha256-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha256.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha3-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha3.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha384-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha384.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha512-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/sha512.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/tripledes-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/tripledes.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/x64-core-min.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/components/x64-core.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/aes.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-md5.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-ripemd160.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-sha1.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-sha224.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-sha256.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-sha3.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-sha384.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/hmac-sha512.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/md5.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/pbkdf2.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/rabbit-legacy.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/rabbit.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/rc4.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/ripemd160.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/sha1.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/sha224.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/sha256.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/sha3.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/sha384.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/sha512.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
+    <File Include="Portal/Scripts/CryptoJS_v3.1.2/rollups/tripledes.js">
+      <publishTime>11/12/2015 23:00:45</publishTime>
+    </File>
     <File Include="Portal/Scripts/jquery-2.1.4.min.js">
       <publishTime>10/29/2015 19:28:32</publishTime>
     </File>
@@ -9120,6 +9405,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Portal/Scripts/Zebra_Datepicker/js/zebra_datepicker.src.js">
       <publishTime>10/31/2015 17:45:45</publishTime>
     </File>
+    <File Include="Portal/SharedViews/_top.menu.html">
+      <publishTime>11/14/2015 23:56:12</publishTime>
+    </File>
+    <File Include="Portal/UserAccount/controller/user.account.controller.js">
+      <publishTime>11/13/2015 23:39:36</publishTime>
+    </File>
+    <File Include="Portal/UserAccount/services/user.account.service.js">
+      <publishTime>11/13/2015 23:23:25</publishTime>
+    </File>
+    <File Include="Portal/UserAccount/view/my-profile.view.html">
+      <publishTime>11/14/2015 23:01:20</publishTime>
+    </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>10/28/2015 23:26:25</publishTime>
     </File>
@@ -9157,7 +9454,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:26:26</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>11/06/2015 21:59:58</publishTime>
+      <publishTime>11/13/2015 22:18:32</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>10/28/2015 23:26:26</publishTime>

@@ -3,8 +3,8 @@
     angular
         .module('app')
         .controller('LoginController', LoginController);
-    LoginController.$inject = ['LoginService', '$location', '$rootScope', 'Constants'];
-    function LoginController(LoginService, $location, $rootScope, Constants) {
+    LoginController.$inject = ['LoginService', '$location', '$rootScope', '$routeParams', 'Constants'];
+    function LoginController(LoginService, $location, $rootScope, $routeParams, Constants) {
         var vm = this;
         vm.loading = false;
         vm.loadingback = false;
@@ -20,7 +20,15 @@
             LoginService.Login(info)
                 .success(function (res, status, headers, config, statusText) {
                     window.localStorage.setItem('user', JSON.stringify(res.Data));
-                    vm.loading = false;                    
+                    vm.loading = false;
+                    var returnUrl = $routeParams.return;
+                    $location.search('return', null);
+                    if (returnUrl == null || returnUrl == undefined || returnUrl == "") {
+                        $location.path("/Dashboard");
+                    }
+                    else {
+                        $location.path(returnUrl);
+                    }
                 })
                 .error(function () {
                     vm.loading = false;
