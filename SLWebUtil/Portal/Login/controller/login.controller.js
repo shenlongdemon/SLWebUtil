@@ -30,7 +30,7 @@
                         $location.path(returnUrl);
                     }
                 })
-                .error(function () {
+                .error(function (response) {
                     vm.loading = false;
                 });
         }

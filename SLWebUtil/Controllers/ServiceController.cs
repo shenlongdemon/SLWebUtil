@@ -36,7 +36,8 @@ namespace SLWebUtil.Controllers
             catch (Exception ex)
             {
                 string exStr = ex.GetHierarchyString();
-                return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = exStr };
+                throw new Exception(exStr, ex);
+                //return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = exStr };
             }
         }
     }
