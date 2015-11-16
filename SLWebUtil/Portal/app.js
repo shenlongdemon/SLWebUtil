@@ -6,8 +6,8 @@
         .config(config)        
         .constant('Constants', 
             {
-                API_BASE : "http://localhost:1111/",
-                //API_BASE : "http://www.slwebutil.somee.com/"             
+                //API_BASE : "http://localhost:1111/",
+                API_BASE : "http://www.slwebutil.somee.com/"             
             }
         )
         .run(run);
