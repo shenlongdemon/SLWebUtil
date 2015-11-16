@@ -1,77 +1,70 @@
 ﻿
 
 <style>
-    input {
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .form-group {
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-
-    td {
-        padding-left: 10px;
-        text-align: center;
-    }
-
-    .divCornor {
-        border: 2px solid #BDBDBD;
-        padding: 0px;
-    }
-
-    .buttonDelete {
-        background-color: red;
-        color: white;
-    }
+    
 </style>
 <script type="text/javascript">
     function SetCurrentDate() {
-        $("#datepicker").val(moment().format("D-M-YYYY")).data('Zebra_DatePicker');
+        $("#dpReport").val(moment().format("D-M-YYYY")).data('Zebra_DatePicker');
     }
     $(document).ready(function () {
-
-        $('input').on('keydown', function (event) {
-            var id = this.id;
-            if (id == "txtCode") {
-                
-            }
-
-        });
-        $("button").click(function () {
-            var id = this.id;
-            if (id == "btnToday")
-            {
-                
-            }
-        });
-        $("input").keypress(function (e) {
-            var id = this.id;
-            if (id == "txtCode") {
-                
-            }
-        });
-        $("input").focus(function (e) {
-            $(this).select();
-        });
-        var $zdp = $('#datepicker').data('Zebra_DatePicker');
-        $("#datepicker").Zebra_DatePicker({
+       
+        var $zdp = $('#dpReport').data('Zebra_DatePicker');
+        $("#dpReport").Zebra_DatePicker({
             format: "d-m-Y",
             onSelect: function (formatted_date, standard_date, js_date) {
-                var PatientId = $("#txtCode").val();
-                //GetMedicineHistoriesByPatientId(PatientId, standard_date);
+                
             }
         });
         SetCurrentDate();
     });
 </script>
+<header ng-include="'./SharedViews/_top.menu.html'"></header>
 <section id="content">
     <div class="loading" ng-show="vm.loading"></div>
     <div class="container-fluid">
-        <div class="row col-md-12 col-sm-12">
-            <input style="float:left; font-size:20px;" id="datepicker" type="text" />
+        <div class="row col-md-4 col-sm-4">
+            <div class="row">
+                
+                <input style=" font-size:20px; width:200px;" id="dpReport" type="text" />
+                
+                <select name="datetype" id="datetype"
+                        ng-options="option.name for option in vm.datetypes track by option.id"
+                        ng-model="vm.selecteddatetype"
+                        style="height:30px; margin-left:10px;"></select>
+                
+                <button ng-click="vm.GetReportByTime()" id="btnGetReportByTime" style="height:30px; margin-left:10px;">Report</button>
+            </div>
+            <table class="table table-striped table-bordered col-md-12 col-sm-12">
+                <thead>
+                    <tr>
+                        <td class="col-md-2 col-sm-2">Ngày</td>
+                        <td class="col-md-6 col-sm-6">Số tiền</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="pa in vm.reportbytimes">
+                        <td>{{pa.Datetime}}</td>
+                        <td>
+                            {{pa.Total.toLocaleString()}}
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <label style="font-size:200%;"> {{vm.GetTotalReportByTimes().toLocaleString()}}</label>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
         </div>
-        
+        <div class="row col-md-4 col-sm-4">
+
+        </div>
+        <div class="row col-md-4 col-sm-4">
+
+        </div>
     </div>
 </section>
+                            

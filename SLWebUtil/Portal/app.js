@@ -30,7 +30,7 @@
                 controllerAs: 'vm'
             })
             .when('/Medicine/report', {
-                controller: 'MedicineController',
+                controller: 'ReportMedicineController',
                 templateUrl: 'Medicine/view/report.view.html',
                 controllerAs: 'vm'
             })

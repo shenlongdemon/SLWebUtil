@@ -21,6 +21,7 @@
         service.DeletePatient = DeletePatient;
         service.GetPatientsByPhone = GetPatientsByPhone;
         service.GetMedicineNames = GetMedicineNames;
+        service.GetReportByTime = GetReportByTime;
         return service;
 
         
@@ -59,7 +60,7 @@
         }
         function UpdatePatientHistory(patienthistory)
         {
-        var data = JSON.stringify(patienthistory);
+            var data = JSON.stringify(patienthistory);
             var api = MEDICINE_API.replace("{act}", "UpdatePatientHistory").replace("{obj}", data);
             return $http.get(api);
         }
@@ -78,6 +79,13 @@
             var api = MEDICINE_API.replace("{act}", "GetPatientsByPhone").replace("{obj}", phone);
             return $http.get(api);
         }
+        function GetReportByTime(obj)
+        {
+            var data = JSON.stringify(obj);
+            var api = MEDICINE_API.replace("{act}", "GetReportByTime").replace("{obj}", data);
+            return $http.get(api);
+        }
+        
     }
 
 })();

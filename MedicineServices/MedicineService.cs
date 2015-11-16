@@ -155,5 +155,28 @@ namespace Services
             return ph;
         }
 
+
+
+        public async Task<dynamic> GetReportByTime(object data) // datetime yyyy/mm/dd, datetype(1:day, 2:month)
+        {
+            dynamic inData = data.ToDynamicObject();
+            int datetype = inData.datetype;
+            DateTime datetime = inData.datetime;
+            var list = _patientHistoryRepo.GetAll();
+            if (datetype == 1)
+            {
+                list = list.Where(p => p.Date.Day == datetime.Day && p.Date.Month == datetime.Month && p.Date.Year == datetime.Year); 
+            }
+            else
+            {
+                list = list.Where(p => p.Date.Month == datetime.Month && p.Date.Year == datetime.Year);
+            }
+            var group = from p in list
+                        group p by p.Date.Day into g
+                        orderby g.Key
+                        select new { Datetime = g.Key, Total = g.Sum(p=>p.Count * p.Price) };
+                    
+            return await group.ToListAsync();
+        }
     }
 }

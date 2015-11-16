@@ -28,7 +28,7 @@
         vm.loading = false;
         vm.loadingback = false;
         vm.age = null;
-
+        
         $rootScope.GetPatientsById = GetPatientsById;
         $rootScope.GetPatientsByName = GetPatientsByName;
         $rootScope.GetPatientsByPhone = GetPatientsByPhone;
@@ -363,6 +363,14 @@
                        vm.loading = false;
                    });
         }
+
+
+
+
+
+
+
+
     }
 
 })();
