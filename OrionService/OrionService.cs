@@ -87,7 +87,7 @@ namespace Services
                         {
                             string [] strs = fw.Split(";");
                             string name = SEPARATOR_FIRMWARE + " " + strs[0].Trim();
-                            string []code = strs.Skip(1).Take(strs.Length - 1).Select(p => p.ToUpper()).ToArray();
+                            string []code = strs.Skip(1).Take(strs.Length - 1).Select(p => p.ToUpper()).Where(p=>!string.IsNullOrEmpty(p) && !string.IsNullOrWhiteSpace(p)).ToArray();
                             var item = new { Name = name, Code = code };
                             items.Add(item);
                         }
