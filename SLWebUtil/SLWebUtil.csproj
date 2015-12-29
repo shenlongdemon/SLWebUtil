@@ -240,6 +240,7 @@
     <Content Include="Portal\Login\controller\login.controller.js" />
     <Content Include="Portal\Login\services\login.service.js" />
     <Content Include="Portal\Login\view\login.view.html" />
+    <Content Include="Portal\Medicine\controller\report.medicine.controller.js" />
     <Content Include="Portal\Medicine\services\medicine.service.js" />
     <Content Include="Portal\Medicine\view\report.view.html" />
     <Content Include="Portal\Scripts\angular-1.4.7\angular-animate.js" />
@@ -2785,6 +2786,7 @@
     <Content Include="Portal\Scripts\bootstrap-3.3.5\js\transition.js" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\package.js" />
     <Content Include="Portal\Scripts\bootstrap-3.3.5\test-infra\requirements.txt" />
+    <Content Include="Portal\Scripts\commonutil.js" />
     <Content Include="Portal\Scripts\CryptoJS_v3.1.2\components\aes-min.js" />
     <Content Include="Portal\Scripts\CryptoJS_v3.1.2\components\aes.js" />
     <Content Include="Portal\Scripts\CryptoJS_v3.1.2\components\cipher-core-min.js" />

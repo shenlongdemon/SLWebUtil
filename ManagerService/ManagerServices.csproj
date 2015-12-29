@@ -53,6 +53,10 @@
       <Project>{0ba52986-ce98-4fa1-9a10-59d7a22bca11}</Project>
       <Name>AuthorizationServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GCMNotificationServices\GCMNotificationServices.csproj">
+      <Project>{af98bed6-70d9-4b6c-9831-c8b60068db93}</Project>
+      <Name>GCMNotificationServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MedicineServices\MedicineServices.csproj">
       <Project>{88b8a5a9-2d0a-4593-bc92-ed82e0914993}</Project>
       <Name>MedicineServices</Name>

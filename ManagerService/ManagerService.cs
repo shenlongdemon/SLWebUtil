@@ -58,7 +58,10 @@ namespace Services
                 {
                     new OrionService(),
                     new MedicineService(),
-                    new AuthorizationService()
+                    new AuthorizationService(),
+                    new GCMNotificationService()
+
+
                 };
             }
             return _ManagerService;

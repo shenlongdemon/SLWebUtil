@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUtility", "..\..\CSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryUtility", "..\..\CSharpDLL\RepositoryUtility\RepositoryUtility\RepositoryUtility.csproj", "{3EC3CF96-E702-4A90-89CC-B3438191B334}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCMNotificationServices", "GCMNotificationServices\GCMNotificationServices.csproj", "{AF98BED6-70D9-4B6C-9831-C8B60068DB93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC3CF96-E702-4A90-89CC-B3438191B334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF98BED6-70D9-4B6C-9831-C8B60068DB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF98BED6-70D9-4B6C-9831-C8B60068DB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF98BED6-70D9-4B6C-9831-C8B60068DB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF98BED6-70D9-4B6C-9831-C8B60068DB93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +84,6 @@ Global
 		{5712384A-7080-4CC1-AF73-C43EC67E1520} = {88E38B16-4974-478A-A1B4-16083C81A53A}
 		{0BA52986-CE98-4FA1-9A10-59D7A22BCA11} = {33447BAE-F704-47F1-9E52-F1BC2FB0BDB3}
 		{3EC3CF96-E702-4A90-89CC-B3438191B334} = {88E38B16-4974-478A-A1B4-16083C81A53A}
+		{AF98BED6-70D9-4B6C-9831-C8B60068DB93} = {33447BAE-F704-47F1-9E52-F1BC2FB0BDB3}
 	EndGlobalSection
 EndGlobal
