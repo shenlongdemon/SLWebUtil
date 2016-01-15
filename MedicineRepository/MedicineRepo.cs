@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MedicineRepository
 {
-    public class MedicineRepo
+    public class MedicineRepo 
     {
         private static MedicineRepo _MedicineRepo;
         private SLWebUtilContext dbContext = null;

@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPatientRepository.cs" />
     <Compile Include="Medicine.cs">
       <DependentUpon>MedicineDB.tt</DependentUpon>
     </Compile>
@@ -118,6 +119,10 @@
     <ProjectReference Include="..\..\..\CSharpDLL\RepositoryUtility\RepositoryUtility\RepositoryUtility.csproj">
       <Project>{3ec3cf96-e702-4a90-89cc-b3438191b334}</Project>
       <Name>RepositoryUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SL.Repository\SL.Repository.csproj">
+      <Project>{70d6f812-b55e-4437-8ea9-3cd063fcb323}</Project>
+      <Name>SL.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

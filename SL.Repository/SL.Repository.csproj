@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{852A477D-B351-4BD2-B831-0656A8A5D579}</ProjectGuid>
+    <ProjectGuid>{70D6F812-B55E-4437-8EA9-3CD063FCB323}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrionService</RootNamespace>
-    <AssemblyName>OrionService</AssemblyName>
+    <RootNamespace>SL.Repository</RootNamespace>
+    <AssemblyName>SL.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,18 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrionService.cs" />
+    <Compile Include="DbContextRepository.cs" />
+    <Compile Include="IGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\CSharpDLL\Utilities\Utilities.csproj">
-      <Project>{044b9b2b-fc2a-4312-bbee-c938cb6e5332}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\CSharpDLL\WebApiUtility\WebApiUtility\WebApiUtility.csproj">
-      <Project>{4d3204d9-5f2b-472d-910e-14c3a936f86b}</Project>
-      <Name>WebApiUtility</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
