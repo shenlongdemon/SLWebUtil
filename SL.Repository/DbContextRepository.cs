@@ -8,16 +8,11 @@ using System.Threading.Tasks;
 using SL.Repository;
 namespace SL.Repository
 {
-    public abstract class DbContextRepository<C, T> :
-        IGenericRepository<T> where T : class where C : DbContext, new()
+    public abstract class DbContextRepository<T> :
+        IGenericRepository<T> where T : class 
     {
-        private C _dbContext = new C();
-        public C DbContext
-        {
-
-            get { return _dbContext; }
-            set { _dbContext = value; }
-        }
+        private DbContext _dbContext;
+        public DbContext DbContext { get { return _dbContext; } set { _dbContext = value; } }
         public virtual void Insert(T entity)
         {
             _dbContext.Set<T>().Add(entity);

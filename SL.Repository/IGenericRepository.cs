@@ -14,6 +14,5 @@ namespace SL.Repository
         void Insert(T entity);
         void Delete(T entity);
         void Update(T entity);
-        void Save();
     }
 }

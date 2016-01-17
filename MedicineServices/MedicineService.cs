@@ -16,16 +16,21 @@ namespace Services
 {
     public class MedicineService
     {
-        private EFRepository<Patient> _patientRepo = MedicineRepo.Instance().GetRepo< Patient>();
+        //private EFRepository<Patient> _patientRepo = MedicineRepo.Instance().GetRepo< Patient>();
         private EFRepository<PatientHistory> _patientHistoryRepo = MedicineRepo.Instance().GetRepo<PatientHistory>();
-        public MedicineService(){}
-        
+
+        private IMedicineUnitOfWork UOW;
+
+        public MedicineService(IMedicineUnitOfWork uow)
+        {
+            UOW = uow;
+        }        
         public async Task<dynamic> GetPatientById(object patientId)
         {
             return await Task.Run(() => 
             {
                 int id = int.Parse(patientId.ToString());
-                Patient pat = _patientRepo.First(p => p.Id == id);
+                Patient pat = UOW.PatientRepository.GetById(id);
                 return pat;
             });
         }
@@ -35,17 +40,20 @@ namespace Services
             return await Task.Run(() =>
             {
                 string id = patientId.ToString();
-                var pat = _patientRepo.Where(p => p.Id.ToString().Contains(id.ToString()));
+                var pat = UOW.PatientRepository.Where(p => p.Id.ToString().Contains(id.ToString()));
                 return pat;
             });
         }
         public async Task<dynamic> CreatePatient(object patient)
-        {            
-            Patient ins = patient.ToObject<Patient>();            
-            ins.Guid = Guid.NewGuid();
-            ins.UnsignedName = ins.Name.ConvertUniCodeToASCII();
-            Patient pat = await _patientRepo.InsertAsync(ins);            
-            return pat;
+        {
+            return await Task.Run(() =>
+            {
+                Patient ins = patient.ToObject<Patient>();
+                ins.Guid = Guid.NewGuid();
+                ins.UnsignedName = ins.Name.ConvertUniCodeToASCII();
+                UOW.PatientRepository.Insert(ins);
+                return ins;
+            });
         }
         public async Task<dynamic> GetMedicineHistoriesByPatientId(object data) // PatientId && Date
         {
@@ -79,7 +87,7 @@ namespace Services
         {
             
             string[] names = data.ToString().ToLower().ConvertUniCodeToASCII().Split(" ");
-            IQueryable<Patient> list = _patientRepo.GetAll();
+            IQueryable<Patient> list = UOW.PatientRepository.All();
             foreach (string name in names)
             {
                 list = list.Where(p => 
@@ -93,7 +101,7 @@ namespace Services
         public async Task<dynamic> GetPatientsByPhone(object data)
         {            
             string fone = data.ToString();
-            List<Patient> list = await _patientRepo.Where(p => p.Phone.Contains(fone)).ToListAsync();                   
+            List<Patient> list = await UOW.PatientRepository.Where(p => p.Phone.Contains(fone)).ToListAsync();                   
             return list;            
         }
         public async Task<dynamic> GetMedicineNames(object data)
@@ -119,10 +127,10 @@ namespace Services
             IQueryable<PatientHistory> phs = _patientHistoryRepo.Where(p => p.PatientId == id);
             _patientHistoryRepo.DeleteAll(phs);             
             int re = await _patientHistoryRepo.SaveChangesAsync();
-            Patient pt = _patientRepo.First(p=>p.Id == id);
-            _patientRepo.Delete(pt);
-            int res = await _patientRepo.SaveChangesAsync();
-            return (res == 0 && re == 0) ? 0 : id;           
+            Patient pt = UOW.PatientRepository.GetById(id);
+            UOW.PatientRepository.Delete(pt);
+            UOW.Commit();
+            return 1;            
         }
         public async Task<dynamic> UpdatePatientHistory(object data)
         {

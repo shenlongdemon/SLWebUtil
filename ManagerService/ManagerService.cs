@@ -5,11 +5,16 @@ using System.Linq;
 using System.Reflection;
 using System;
 using System.Net.Http;
+using MedicineRepository;
+using Ninject;
 
 namespace Services
 {
     public class ManagerService
     {
+        [Inject]
+        private static readonly IMedicineUnitOfWork medicineUnitOfWork;
+
         private static ManagerService _ManagerService;        
         private static readonly string NAMESPACE = "Services";
         private static readonly string SERVICE = "Service";
@@ -57,7 +62,7 @@ namespace Services
                 _ManagerService.Services = new List<object>()
                 {
                     new OrionService(),
-                    new MedicineService(),
+                    new MedicineService(medicineUnitOfWork),
                     new AuthorizationService(),
                     new GCMNotificationService()
 
