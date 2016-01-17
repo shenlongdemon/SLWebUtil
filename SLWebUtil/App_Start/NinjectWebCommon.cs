@@ -10,6 +10,14 @@ namespace SLWebUtil.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using SL.Infrastructure.Inject.Resolver.Medicine;
+    using Ninject.Modules;
+    using System.Collections.Generic;
+    using System.Web.Http;
+    using Ninject.Web.WebApi;
+    using System.Web.Http.Dependencies;
+    using Ninject.Syntax;
+    using System.Web.Mvc;
 
     public static class NinjectWebCommon 
     {
@@ -39,12 +47,19 @@ namespace SLWebUtil.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            var kernel = new StandardKernel();
+            NinjectModule registrations = new MedicineModule();
+
+            var kernel = new StandardKernel(registrations);
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                
+
+                var ninjectResolver = new NinjectDependencyResolver(kernel);
+                DependencyResolver.SetResolver(ninjectResolver); // MVC
+                GlobalConfiguration.Configuration.DependencyResolver = ninjectResolver;
+
+
 
                 RegisterServices(kernel);
                 return kernel;
@@ -62,6 +77,64 @@ namespace SLWebUtil.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            
         }        
+    }
+    public class NinjectDependencyResolver : NinjectDependencyScope, System.Web.Http.Dependencies.IDependencyResolver, System.Web.Mvc.IDependencyResolver
+    {
+        private readonly IKernel kernel;
+
+        public NinjectDependencyResolver(IKernel kernel)
+            : base(kernel)
+        {
+            this.kernel = kernel;
+        }
+
+        public IDependencyScope BeginScope()
+        {
+            return new NinjectDependencyScope(this.kernel.BeginBlock());
+        }
+    }
+    public class NinjectDependencyScope : IDependencyScope
+    {
+        private IResolutionRoot resolver;
+
+        internal NinjectDependencyScope(IResolutionRoot resolver)
+        {
+            
+
+            this.resolver = resolver;
+        }
+
+        public void Dispose()
+        {
+            var disposable = this.resolver as IDisposable;
+            if (disposable != null)
+            {
+                disposable.Dispose();
+            }
+
+            this.resolver = null;
+        }
+
+        public object GetService(Type serviceType)
+        {
+            if (this.resolver == null)
+            {
+                throw new ObjectDisposedException("this", "This scope has already been disposed");
+            }
+
+            return this.resolver.TryGet(serviceType);
+        }
+
+        public IEnumerable<object> GetServices(Type serviceType)
+        {
+            if (this.resolver == null)
+            {
+                throw new ObjectDisposedException("this", "This scope has already been disposed");
+            }
+
+            return this.resolver.GetAll(serviceType);
+        }
     }
 }

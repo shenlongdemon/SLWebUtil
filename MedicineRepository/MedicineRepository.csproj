@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMedicineUnitOfWork.cs" />
+    <Compile Include="IPatientHistoryRepository.cs" />
     <Compile Include="IPatientRepository.cs" />
     <Compile Include="Medicine.cs">
       <DependentUpon>MedicineDB.tt</DependentUpon>

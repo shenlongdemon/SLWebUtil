@@ -11,19 +11,23 @@ using System.Web.Script.Serialization;
 using Utilities;
 using System.Data.Entity;
 using System.Globalization;
+using Ninject;
 
 namespace Services
 {
     public class MedicineService
     {
-        //private EFRepository<Patient> _patientRepo = MedicineRepo.Instance().GetRepo< Patient>();
-        private EFRepository<PatientHistory> _patientHistoryRepo = MedicineRepo.Instance().GetRepo<PatientHistory>();
+        
+        private IMedicineUnitOfWork _uow;
 
-        private IMedicineUnitOfWork UOW;
-
-        public MedicineService(IMedicineUnitOfWork uow)
+        [Inject]
+        public IMedicineUnitOfWork UOW
         {
-            UOW = uow;
+            get { return _uow; }
+            set { _uow = value; }
+        }
+        public MedicineService()
+        {
         }        
         public async Task<dynamic> GetPatientById(object patientId)
         {
@@ -61,7 +65,7 @@ namespace Services
             dynamic inData = data.ToDynamicObject();
             int PatientId = inData.PatientId;
             DateTime Date = inData.Date;
-            List<PatientHistory> list = await _patientHistoryRepo.Where(p => p.PatientId == PatientId
+            List<PatientHistory> list = await UOW.PatientHistoryRepository.Where(p => p.PatientId == PatientId
                                                                         && p.Date == Date).ToListAsync< PatientHistory>();
             
             return list;
@@ -70,7 +74,7 @@ namespace Services
         {
             
                 int patientid = int.Parse(data.ToString());
-                var list = await _patientHistoryRepo.Where(p => p.PatientId == patientid)
+                var list = await UOW.PatientHistoryRepository.Where(p => p.PatientId == patientid)
                                             .OrderByDescending(p => p.Date).ToListAsync();
 
                 var group = list.GroupBy(p => new { p.Date.Year, p.Date.Month, p.Date.Day })
@@ -106,61 +110,72 @@ namespace Services
         }
         public async Task<dynamic> GetMedicineNames(object data)
         {
-            List<string> list = await _patientHistoryRepo.GetAll().Select(p=>p.MedicineName).Distinct().ToListAsync();
+            List<string> list = await UOW.PatientHistoryRepository.All().Select(p=>p.MedicineName).Distinct().ToListAsync();
             return list;
         }
         
         public async Task<dynamic> DeleteMedicineHistory(object data)
         {
-            int id = int.Parse(data.ToString());
-            PatientHistory ph = _patientHistoryRepo.First(p=>p.Id == id);
-            _patientHistoryRepo.Delete(ph);
-            int res = await _patientHistoryRepo.SaveChangesAsync();
-            
-            return res == 0 ? res : id;
+            return await Task.Run(() =>
+            {
+                int id = int.Parse(data.ToString());
+                PatientHistory ph = UOW.PatientHistoryRepository.GetById(id);
+                UOW.PatientHistoryRepository.Delete(ph);
+                UOW.Commit();
+                return 1;
+            });
             
         }
         
         public async Task<dynamic> DeletePatient(object data)
-        {            
-            int id = int.Parse(data.ToString());
-            IQueryable<PatientHistory> phs = _patientHistoryRepo.Where(p => p.PatientId == id);
-            _patientHistoryRepo.DeleteAll(phs);             
-            int re = await _patientHistoryRepo.SaveChangesAsync();
-            Patient pt = UOW.PatientRepository.GetById(id);
-            UOW.PatientRepository.Delete(pt);
-            UOW.Commit();
-            return 1;            
+        {
+            return await Task.Run(() =>
+            {
+                int id = int.Parse(data.ToString());
+                List<PatientHistory> phs = UOW.PatientHistoryRepository.Where(p => p.PatientId == id).ToList();
+                phs.ForEach((ph) => {
+                    UOW.PatientHistoryRepository.Delete(ph);
+                });
+            
+                Patient pt = UOW.PatientRepository.GetById(id);
+                UOW.PatientRepository.Delete(pt);
+                UOW.Commit();
+                return 1;
+            });
         }
         public async Task<dynamic> UpdatePatientHistory(object data)
         {
-            PatientHistory ph = data.ToObject<PatientHistory>();
-            if (ph.Id == 0)
+            return await Task.Run(() =>
             {
-                PatientHistory newph = new PatientHistory();
-                newph.MedicineName = ph.MedicineName;
-                newph.Unit = ph.Unit;
-                newph.Count = ph.Count;
-                newph.Price = ph.Price;
-                newph.Date = ph.Date;
-                newph.PatientId = ph.PatientId;
-                newph.Description = ph.Description;
-                ph = await _patientHistoryRepo.InsertAsync(newph);
+                PatientHistory ph = data.ToObject<PatientHistory>();
+                if (ph.Id == 0)
+                {
+                    PatientHistory newph = new PatientHistory();
+                    newph.MedicineName = ph.MedicineName;
+                    newph.Unit = ph.Unit;
+                    newph.Count = ph.Count;
+                    newph.Price = ph.Price;
+                    newph.Date = ph.Date;
+                    newph.PatientId = ph.PatientId;
+                    newph.Description = ph.Description;
+                    UOW.PatientHistoryRepository.Insert(newph);
 
-            }
-            else
-            {
-                int id = ph.Id;
-                PatientHistory src = _patientHistoryRepo.First(p => p.Id == id);
-                src.MedicineName = ph.MedicineName;
-                src.Unit = ph.Unit;
-                src.Count = ph.Count;
-                src.Price = ph.Price;
-                src.Description = ph.Description;
-                ph = _patientHistoryRepo.Update(src);
-                await _patientHistoryRepo.SaveChangesAsync();
-            }
-            return ph;
+                    ph.Id = newph.Id;
+                }
+                else
+                {
+                    int id = ph.Id;
+                    PatientHistory src = UOW.PatientHistoryRepository.GetById(id);
+                    src.MedicineName = ph.MedicineName;
+                    src.Unit = ph.Unit;
+                    src.Count = ph.Count;
+                    src.Price = ph.Price;
+                    src.Description = ph.Description;
+                    UOW.PatientHistoryRepository.Update(src);
+                }
+                UOW.Commit();
+                return ph;
+            });
         }
 
 
@@ -170,7 +185,7 @@ namespace Services
             dynamic inData = data.ToDynamicObject();
             int datetype = inData.datetype;
             DateTime datetime = inData.datetime;
-            var list = _patientHistoryRepo.GetAll();
+            var list = UOW.PatientHistoryRepository.All();
             if (datetype == 1)
             {
                 list = list.Where(p => p.Date.Day == datetime.Day && p.Date.Month == datetime.Month && p.Date.Year == datetime.Year); 

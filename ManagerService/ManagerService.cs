@@ -12,8 +12,6 @@ namespace Services
 {
     public class ManagerService
     {
-        [Inject]
-        private static readonly IMedicineUnitOfWork medicineUnitOfWork;
 
         private static ManagerService _ManagerService;        
         private static readonly string NAMESPACE = "Services";
@@ -62,7 +60,7 @@ namespace Services
                 _ManagerService.Services = new List<object>()
                 {
                     new OrionService(),
-                    new MedicineService(medicineUnitOfWork),
+                    new MedicineService(),
                     new AuthorizationService(),
                     new GCMNotificationService()
 

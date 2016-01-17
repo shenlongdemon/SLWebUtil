@@ -3375,6 +3375,10 @@
       <Project>{5ecf0198-323d-4164-8e3d-e2797215a272}</Project>
       <Name>ManagerServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SL.Infrastructure.Inject.Resolver\SL.Infrastructure.Inject.Resolver.csproj">
+      <Project>{ed1fb464-3479-4c38-a1d7-215fbdc493d8}</Project>
+      <Name>SL.Infrastructure.Inject.Resolver</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

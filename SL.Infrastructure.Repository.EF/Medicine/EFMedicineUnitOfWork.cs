@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MedicineRepository.EF;
 using MedicineRepository;
 
 namespace SL.Infrastructure.Repository.EF.Medicine
@@ -14,6 +13,7 @@ namespace SL.Infrastructure.Repository.EF.Medicine
         
         public EFMedicineUnitOfWork() {
             _patientRepository = new EFPatientRepository(_dbContext);
+            _patientHistoryRepository = new EFPatientHistoryRepository(_dbContext);
         }
 
         #region Patient Repo
@@ -25,8 +25,16 @@ namespace SL.Infrastructure.Repository.EF.Medicine
                 return _patientRepository;
             }
         }
-        #endregion
 
+        #endregion
+        private readonly IPatientHistoryRepository _patientHistoryRepository;
+        public IPatientHistoryRepository PatientHistoryRepository
+        {
+            get
+            {
+                return _patientHistoryRepository;
+            }
+        }
 
 
         public void Commit()
