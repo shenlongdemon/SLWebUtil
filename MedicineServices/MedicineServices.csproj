@@ -91,6 +91,10 @@
       <Project>{5712384a-7080-4cc1-af73-c43ec67e1520}</Project>
       <Name>MedicineRepository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SL.Infrastructure.Repository.EF\SL.Infrastructure.Repository.EF.csproj">
+      <Project>{f3e1c26e-1f05-4a5e-ac08-adb6e22c2481}</Project>
+      <Name>SL.Infrastructure.Repository.EF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SL.Repository\SL.Repository.csproj">
       <Project>{70D6F812-B55E-4437-8EA9-3CD063FCB323}</Project>
       <Name>SL.Repository</Name>

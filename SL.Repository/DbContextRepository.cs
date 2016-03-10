@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 using SL.Repository;
 namespace SL.Repository
 {
-    public abstract class DbContextRepository<T> :
-        IGenericRepository<T> where T : class 
+    public abstract class DbContextRepository<T> : IGenericRepository<T> where T : class 
     {
         private DbContext _dbContext;
         public DbContext DbContext { get { return _dbContext; } set { _dbContext = value; } }
@@ -35,11 +34,7 @@ namespace SL.Repository
         {
             _dbContext.Entry<T>(entity).State = EntityState.Modified;
         }
-
-        public virtual void Save()
-        {
-            _dbContext.SaveChanges();
-        }
+        
 
         public virtual IQueryable<T> Where(Expression<Func<T, bool>> predicate)
         {

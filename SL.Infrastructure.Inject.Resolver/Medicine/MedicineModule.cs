@@ -13,7 +13,7 @@ namespace SL.Infrastructure.Inject.Resolver.Medicine
     {
         public override void Load()
         {
-            Bind(typeof(IMedicineUnitOfWork)).To(typeof(EFMedicineUnitOfWork));
+            Bind<IMedicineUnitOfWork>().To<EFMedicineUnitOfWork>();
         }
     }
 }

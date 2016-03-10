@@ -13,6 +13,9 @@ namespace Services
     public class ManagerService
     {
 
+
+
+
         private static ManagerService _ManagerService;        
         private static readonly string NAMESPACE = "Services";
         private static readonly string SERVICE = "Service";
@@ -62,9 +65,8 @@ namespace Services
                     new OrionService(),
                     new MedicineService(),
                     new AuthorizationService(),
-                    new GCMNotificationService()
-
-
+                    new GCMNotificationService(),
+                    new MapService()
                 };
             }
             return _ManagerService;

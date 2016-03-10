@@ -82,6 +82,10 @@
       <Project>{af98bed6-70d9-4b6c-9831-c8b60068db93}</Project>
       <Name>GCMNotificationServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GoogleServices\GoogleServices.csproj">
+      <Project>{731925e3-4d06-48a4-9a69-f106258d1d30}</Project>
+      <Name>GoogleServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MedicineRepository\MedicineRepository.csproj">
       <Project>{5712384a-7080-4cc1-af73-c43ec67e1520}</Project>
       <Name>MedicineRepository</Name>

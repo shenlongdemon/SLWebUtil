@@ -12,23 +12,20 @@ using Utilities;
 using System.Data.Entity;
 using System.Globalization;
 using Ninject;
+using SL.Infrastructure.Repository.EF.Medicine;
 
 namespace Services
 {
     public class MedicineService
     {
-        
-        private IMedicineUnitOfWork _uow;
-
         [Inject]
-        public IMedicineUnitOfWork UOW
-        {
-            get { return _uow; }
-            set { _uow = value; }
+        public IMedicineUnitOfWork UOW { get; set; }
+
+       
+
+        public MedicineService() {
+            UOW = new EFMedicineUnitOfWork();
         }
-        public MedicineService()
-        {
-        }        
         public async Task<dynamic> GetPatientById(object patientId)
         {
             return await Task.Run(() => 
@@ -56,6 +53,7 @@ namespace Services
                 ins.Guid = Guid.NewGuid();
                 ins.UnsignedName = ins.Name.ConvertUniCodeToASCII();
                 UOW.PatientRepository.Insert(ins);
+                UOW.Commit();
                 return ins;
             });
         }
