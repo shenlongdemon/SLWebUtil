@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3E1C26E-1F05-4A5E-AC08-ADB6E22C2481}</ProjectGuid>
+    <ProjectGuid>{ACC8C9A0-325A-4F71-86B0-0BD4684922BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SL.Infrastructure.Repository.EF</RootNamespace>
-    <AssemblyName>SL.Infrastructure.Repository.EF</AssemblyName>
+    <RootNamespace>LocSL</RootNamespace>
+    <AssemblyName>LocSL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,30 +51,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LocSL\EFLocSLUnitOfWork.cs" />
-    <Compile Include="LocSL\EFMyPlaceRepository.cs" />
-    <Compile Include="Medicine\EFMedicineUnitOfWork.cs" />
-    <Compile Include="Medicine\EFPatientHistoryRepository.cs" />
-    <Compile Include="Medicine\EFPatientRepository.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="ILocSLUnitOfWork.cs" />
+    <Compile Include="IMyPlacesRepository.cs" />
+    <Compile Include="LocSLDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocSLDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocSLDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocSLDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocSLDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocSLDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPlace.cs">
+      <DependentUpon>LocSLDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.Config" />
+    <EntityDeploy Include="LocSLDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LocSLDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="LocSLDB.edmx.diagram">
+      <DependentUpon>LocSLDB.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LocSLRepository\LocSLRepository.csproj">
-      <Project>{94a26351-832d-45df-93cc-03e0b2025e68}</Project>
-      <Name>LocSLRepository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MedicineRepository\MedicineRepository.csproj">
-      <Project>{5712384a-7080-4cc1-af73-c43ec67e1520}</Project>
-      <Name>MedicineRepository</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\SL.Repository\SL.Repository.csproj">
       <Project>{70d6f812-b55e-4437-8ea9-3cd063fcb323}</Project>
       <Name>SL.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LocSLDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LocSLDB.edmx</DependentUpon>
+      <LastGenOutput>LocSLDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LocSLDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LocSLDB.edmx</DependentUpon>
+      <LastGenOutput>LocSLDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -86,6 +86,10 @@
       <Project>{731925e3-4d06-48a4-9a69-f106258d1d30}</Project>
       <Name>GoogleServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LocSLServices\LocSLServices.csproj">
+      <Project>{f2b896f0-7b70-4c0f-9715-d2e70bb417fd}</Project>
+      <Name>LocSLServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MedicineRepository\MedicineRepository.csproj">
       <Project>{5712384a-7080-4cc1-af73-c43ec67e1520}</Project>
       <Name>MedicineRepository</Name>

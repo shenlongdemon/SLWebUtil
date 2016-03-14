@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:35:58</publishTime>
     </File>
     <File Include="bin/AuthorizationServices.dll">
-      <publishTime>11/15/2015 22:05:59</publishTime>
+      <publishTime>01/28/2016 22:39:46</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/28/2015 23:36:01</publishTime>
@@ -84,14 +84,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>10/28/2015 23:36:01</publishTime>
     </File>
+    <File Include="bin/GCMNotificationServices.dll">
+      <publishTime>02/13/2016 22:25:00</publishTime>
+    </File>
+    <File Include="bin/GoogleServices.dll">
+      <publishTime>03/10/2016 23:09:40</publishTime>
+    </File>
     <File Include="bin/ManagerService.dll">
-      <publishTime>11/17/2015 00:03:06</publishTime>
+      <publishTime>03/10/2016 23:09:41</publishTime>
     </File>
     <File Include="bin/MedicineRepository.dll">
-      <publishTime>11/09/2015 21:32:01</publishTime>
+      <publishTime>01/28/2016 22:39:46</publishTime>
     </File>
     <File Include="bin/MedicineServices.dll">
-      <publishTime>11/17/2015 00:03:05</publishTime>
+      <publishTime>01/28/2016 22:39:47</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>10/28/2015 23:36:02</publishTime>
@@ -138,8 +144,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>10/31/2015 12:59:33</publishTime>
     </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>01/17/2016 21:35:10</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Common.dll">
+      <publishTime>01/17/2016 21:35:12</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Mvc.dll">
+      <publishTime>01/17/2016 21:35:17</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.WebApi.dll">
+      <publishTime>01/17/2016 21:41:37</publishTime>
+    </File>
     <File Include="bin/OrionService.dll">
-      <publishTime>11/15/2015 22:05:59</publishTime>
+      <publishTime>02/27/2016 22:01:46</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>10/28/2015 23:36:08</publishTime>
@@ -162,8 +180,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Portal/Medicine/controller/medicine.controller.js">
       <publishTime>11/09/2015 21:39:24</publishTime>
     </File>
+    <File Include="bin/PushSharp.Android.dll">
+      <publishTime>12/29/2015 21:10:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Core.dll">
+      <publishTime>12/29/2015 21:10:23</publishTime>
+    </File>
     <File Include="bin/RepositoryUtility.dll">
-      <publishTime>11/03/2015 22:44:04</publishTime>
+      <publishTime>01/28/2016 22:39:44</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>10/28/2015 23:36:04</publishTime>
@@ -201,8 +225,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>10/28/2015 23:36:05</publishTime>
     </File>
+    <File Include="bin/SL.Infrastructure.Inject.Resolver.dll">
+      <publishTime>01/28/2016 22:39:47</publishTime>
+    </File>
+    <File Include="bin/SL.Infrastructure.Repository.EF.dll">
+      <publishTime>01/28/2016 22:39:46</publishTime>
+    </File>
+    <File Include="bin/SL.Repository.dll">
+      <publishTime>01/28/2016 22:39:44</publishTime>
+    </File>
     <File Include="bin/SLWebUtil.dll">
-      <publishTime>11/17/2015 00:03:07</publishTime>
+      <publishTime>03/10/2016 23:09:45</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>10/28/2015 23:36:03</publishTime>
@@ -238,10 +271,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:36:04</publishTime>
     </File>
     <File Include="bin/Utilities.dll">
-      <publishTime>11/15/2015 22:05:59</publishTime>
+      <publishTime>01/28/2016 22:39:44</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>01/17/2016 21:35:14</publishTime>
     </File>
     <File Include="bin/WebApiUtility.dll">
-      <publishTime>10/30/2015 01:07:23</publishTime>
+      <publishTime>01/28/2016 22:39:44</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/28/2015 23:36:11</publishTime>
@@ -274,10 +310,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:26:25</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/31/2015 15:32:25</publishTime>
+      <publishTime>01/17/2016 21:41:39</publishTime>
     </File>
     <File Include="Portal/app.js">
-      <publishTime>11/17/2015 00:02:54</publishTime>
+      <publishTime>02/13/2016 22:31:58</publishTime>
     </File>
     <File Include="Portal/Contents/Common.css">
       <publishTime>10/31/2015 14:56:36</publishTime>
@@ -9478,7 +9514,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2015 23:26:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/04/2015 23:13:21</publishTime>
+      <publishTime>02/27/2016 21:52:13</publishTime>
     </File>
   </ItemGroup>
 </Project>

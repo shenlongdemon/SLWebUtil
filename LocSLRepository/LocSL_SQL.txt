@@ -1,0 +1,20 @@
+SELECT * FROM information_schema.tables
+select * from UserAccount
+
+if exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'Places' )
+    drop table Places
+
+	
+	
+if exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'MyPlaces' )
+    drop table MyPlaces
+
+CREATE TABLE MyPlaces
+(
+    ID  uniqueidentifier not null default NEWID(),
+    Name nvarchar(100) not null,
+    UserAccountID uniqueidentifier not null ,
+	Location geography not null,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (UserAccountID) REFERENCES UserAccount(ID)
+)

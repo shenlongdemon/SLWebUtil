@@ -27,6 +27,15 @@ namespace Services
             dynamic res = await srv.InvokeAsync(action, new string[] {  obj } );            
             return res;
         }
+        public async Task<dynamic> DoAction(dynamic objDynamic)
+        {
+            string service = objDynamic.service;
+            string action = objDynamic.action;
+            object obj = objDynamic.obj;
+            var srv = GetService(service);
+            dynamic res = await srv.InvokeAsync(action, new object[] { obj });
+            return res;
+        }
         public HttpResponseMessage IsAuthorized(string service, string action, object tokenAuth)
         {
             HttpResponseMessage resMsg = new HttpResponseMessage(System.Net.HttpStatusCode.OK);
@@ -66,7 +75,8 @@ namespace Services
                     new MedicineService(),
                     new AuthorizationService(),
                     new GCMNotificationService(),
-                    new MapService()
+                    new MapService(),
+                    new LocSLService()
                 };
             }
             return _ManagerService;

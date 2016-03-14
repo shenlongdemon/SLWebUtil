@@ -32,6 +32,16 @@ namespace SLWebUtil
                    obj = RouteParameter.Optional
                }
             );
+            config.Routes.MapHttpRoute(
+               name: "ServiceApi-Post",
+               routeTemplate: "api/service/dopost",
+               defaults: new
+               {
+                   controller = "Service",
+                   action = "DoPost",                  
+                   obj = RouteParameter.Optional
+               }
+            );
         }
     }
 }

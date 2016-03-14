@@ -20,13 +20,13 @@ namespace Services
             {
                 try
                 {
-                    dynamic inData = data.ToDynamicObject();
-                    string AppName = inData.AppName;
-                    string DeviceId = inData.DeviceId;
-                    string Message = inData.Message;
+                    //dynamic inData = data.ToDynamicObject();
+                    //string AppName = inData.AppName;
+                    //string DeviceId = inData.DeviceId;
+                    string Message = "inData.Message";
 
 
-                    string apiKey = GetApiKey(AppName);
+                    //string apiKey = GetApiKey(AppName);
                     PushBroker push = new PushBroker();
                     #region events
                     push.OnNotificationSent += NotificationSent;
@@ -38,8 +38,8 @@ namespace Services
                     push.OnChannelCreated += ChannelCreated;
                     push.OnChannelDestroyed += ChannelDestroyed;
                     #endregion
-                    push.RegisterGcmService(new GcmPushChannelSettings(apiKey));
-                    push.QueueNotification(new GcmNotification().ForDeviceRegistrationId(DeviceId)
+                    push.RegisterGcmService(new GcmPushChannelSettings("AIzaSyCBaTkTbugJ3kOlP0ZB6d-8wGZgq0uVRbk"));
+                    push.QueueNotification(new GcmNotification().ForDeviceRegistrationId("dWhQGPfAMhQ:APA91bGC6NvVjPNBcRbBdKEbOPA6t2nEHTzR3DgIiCjKLDmYfS0ovQCLwGSJxoLIjhVA6FGYKqNEoLx1y8Yw3mKcP5l31bFJ-X1NRNMZqEJLULVEU7OHsFw_jDIAE2bZwY-0PnVMLSJ-")
                         .WithJson(@"{""message"":""" + Message + @"""}"));
                     push.StopAllServices();
                     return 1;

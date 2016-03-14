@@ -11,6 +11,7 @@ namespace Services
 {
     public class MapService
     {
+        public static readonly string MAP_ROUTE_API = System.Configuration.ConfigurationManager.AppSettings["Map_Route_Api"].ToString();
         /// <summary>
         /// Get list of router what route from location to another
         /// </summary>
@@ -20,10 +21,10 @@ namespace Services
         {
             dynamic res = null;
             dynamic inData = data.ToDynamicObject();
-            double FromLat = inData.FromLat;
-            double FromLng = inData.FromLng;
-            double ToLat = inData.ToLat;
-            double ToLng = inData.ToLng;
+            double FromLat = inData.From.Latitude;
+            double FromLng = inData.From.Longitude;
+            double ToLat = inData.To.Latitude;
+            double ToLng = inData.To.Longitude;
             string url = GetRouteUrl(FromLat, FromLng, ToLat, ToLng);
             HttpResponseMessage response = await WebApiUtil.GetAsync(url);
             if (response.IsSuccessStatusCode == true)
@@ -36,24 +37,8 @@ namespace Services
             return res;
         }
         public string GetRouteUrl(double fromLat, double fromLng, double toLat, double toLng)
-        {
-            string str_origin = "origin=" + fromLat + "," + fromLng;
-
-            // Destination of route
-            string str_dest = "destination=" + toLat + "," + toLng;
-
-            // Sensor enabled
-            string sensor = "sensor=false";
-
-            // Building the parameters to the web service
-            string parameters = str_origin + "&" + str_dest + "&" + sensor;
-
-            // Output format
-            string output = "json";
-
-            // Building the url to the web service
-            string url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
-
+        {            
+            string url = string.Format(MAP_ROUTE_API, fromLat, fromLng, toLat, toLng);
             return url;
         }
 
@@ -86,9 +71,9 @@ namespace Services
                         //    /** Traversing all steps */
                         for (int k = 0; k < jSteps.Count; k++)
                         {
-                            String polyline = "";
+                            string polyline = "";
                             polyline = jSteps[k].polyline.points;
-                            List<dynamic> list = decodePoly(polyline);
+                            List<dynamic> list = DecodePoly(polyline);
 
                             //        /** Traversing all points */
                             for (int l = 0; l < list.Count; l++)
@@ -111,7 +96,7 @@ namespace Services
             }
             return routes;
         }
-        public List<dynamic> decodePoly(string encoded)
+        public List<dynamic> DecodePoly(string encoded)
         {
 
             List<dynamic> poly = new List<dynamic>();

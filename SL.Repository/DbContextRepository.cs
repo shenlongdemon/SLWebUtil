@@ -25,6 +25,7 @@ namespace SL.Repository
 
         public virtual void Delete(T entity)
         {
+            _dbContext.Set<T>().Attach(entity);
             _dbContext.Set<T>().Remove(entity);
         }
 
